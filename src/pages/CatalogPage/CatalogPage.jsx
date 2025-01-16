@@ -14,10 +14,12 @@ export default function CatalogPage() {
   }, [dispatch]);
 
   return (
-    <>
-      <h1 className={css.title}>CatalogePage</h1>
-      <LocationInput />
-      <EquipmentsList data={equipmentList} />
-    </>
+    <section className={css.section}>
+      <div className={css.leftBox}>
+        <LocationInput />
+        <p className={css.text}>Filters</p>
+        <EquipmentsList data={equipmentList} />
+      </div>
+    </section>
   );
 }

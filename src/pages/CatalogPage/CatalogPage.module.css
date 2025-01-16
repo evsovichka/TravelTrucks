@@ -1,3 +1,16 @@
-.title {
-  z-index: 56;
+.section {
+  padding-top: 48px;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.leftBox {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }

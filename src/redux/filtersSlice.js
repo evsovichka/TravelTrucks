@@ -21,7 +21,7 @@ const filtersSlice = createSlice({
       state.type = action.payload;
     },
     toggleFeature(state, action) {
-      const { equipment } = action.payload;
+      const equipment = action.payload;
       state.equipment[equipment] = !state.equipment[equipment];
     },
     resetFilters(state) {
