@@ -1,0 +1,50 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 20px;
+  max-width: 360px;
+}
+
+.label {
+  line-height: 150%;
+  color: var(--gray);
+}
+
+.inputWrap {
+  position: relative;
+}
+.input {
+  border-radius: 12px;
+  padding: 18px 18px 18px 46px;
+  width: 360px;
+  height: 56px;
+  background: var(--inputs);
+  border: none;
+  color: var(--main);
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.input::placeholder {
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+}
+
+.icon {
+  position: absolute;
+  fill: var(--main);
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  padding-right: 8px;
+}
+
+.icon svg {
+  fill: var(--main);
+}
+.input:focus .icon {
+  fill: var(--main);
+}
