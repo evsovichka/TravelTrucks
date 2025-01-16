@@ -14,9 +14,8 @@
   flex-direction: column;
   gap: 40px;
   padding: 0 64px;
-  justify-content: center; /* Центрує вміст по вертикалі */
+  justify-content: center;
   align-items: flex-start;
-  position: relative; /* Додайте позицію, щоб мати можливість використовувати z-index */
   z-index: 1;
   height: 100vh;
 }
@@ -32,7 +31,6 @@
   color: var(--inputs);
   font-weight: 600;
   font-size: 48px;
-  /* letter-spacing: 1.1px; */
   letter-spacing: 0.02em;
 }
 
