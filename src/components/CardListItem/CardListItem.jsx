@@ -1,11 +1,25 @@
+import { useDispatch, useSelector } from "react-redux";
 import CategoriesList from "../CategoriesList/CategoriesList";
 import Button from "../ui/Button/Button";
 import Heart from "../ui/icons/Heart";
 import LocationIcon from "../ui/icons/locationIcon";
 import StarRating from "../ui/icons/StarRating";
 import css from "./CardListItem.module.css";
+import { selectFavoriteCampers } from "../../redux/selectors";
+import { addFavorite, deleteFavorite } from "../../redux/favoriteSlice";
 
 export default function CardListItem({ data }) {
+  const dispatch = useDispatch();
+  const favoriteItems = useSelector(selectFavoriteCampers);
+  const isFavorite = favoriteItems.includes(data.id);
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      dispatch(deleteFavorite(data.id));
+    } else {
+      dispatch(addFavorite(data.id));
+    }
+  };
   return (
     <div className={css.wrap}>
       <img
@@ -19,7 +33,7 @@ export default function CardListItem({ data }) {
             <p className={css.title}>{data.name}</p>
             <div className={css.priceBox}>
               <p className={css.title}>€{data.price}</p>
-              <Heart />
+              <Heart isFavorite={isFavorite} onClick={handleFavoriteClick} />
             </div>
           </div>
           <div className={css.ratingLocationWrapper}>

@@ -11,6 +11,7 @@ import Button from "../../components/ui/Button/Button.jsx";
 import {
   selectCampers,
   selectCurrentPage,
+  selectFavoriteCampers,
   selectLimit,
   selectTotalItems,
 } from "../../redux/selectors.js";
@@ -25,6 +26,14 @@ export default function CatalogPage() {
   const limit = useSelector(selectLimit);
   const totalItems = useSelector(selectTotalItems);
   const totalPages = totalItems / limit;
+  const favorites = useSelector(selectFavoriteCampers);
+
+  const favoriteItems = campersItems.filter((item) =>
+    favorites.includes(item.id)
+  );
+  const nonFavoriteItems = campersItems.filter(
+    (item) => !favorites.includes(item.id)
+  );
 
   useEffect(() => {
     if (!hasFetched.current) {
@@ -48,7 +57,7 @@ export default function CatalogPage() {
         <Button>Search</Button>
       </div>
       <div className={css.rightBox}>
-        <CardList data={campersItems} />
+        <CardList data={[...favoriteItems, ...nonFavoriteItems]} />
         {campersItems.length > 0 && totalPages > currentPage && (
           <Button style="loadMore" onClick={handleClick}>
             Load More
