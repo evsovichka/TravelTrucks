@@ -21,7 +21,7 @@
   border: 1px solid var(--gray-light);
   background: var(--white);
   border-radius: 200px;
-  padding: 16px 32px;
+  padding: 16px 30px;
   width: 145px;
   height: 56px;
   color: var(--main);
@@ -29,9 +29,14 @@
 
 .loadMore:hover {
   border-color: var(--button-hover);
+  background: var(--white);
 }
 
 .view {
   width: 173px;
   padding: 16px 48.5px;
+}
+
+.show {
+  padding: 16px 40px;
 }
