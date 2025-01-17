@@ -3,8 +3,8 @@
   flex-direction: column;
   gap: 24px;
   max-width: 360px;
+  padding-bottom: 8px;
 }
-
 .title {
   font-weight: 600;
   font-size: 20px;
@@ -16,10 +16,8 @@
   display: flex;
   flex-direction: row;
   column-gap: 12px;
-  row-gap: 8px;
   flex-wrap: wrap;
 }
-
 .item {
   display: flex;
   flex-direction: column;
@@ -35,8 +33,8 @@
   cursor: pointer;
 }
 
-.isActive {
-  border-color: var(--button);
+.input {
+  display: none;
 }
 
 .label {
@@ -46,4 +44,8 @@
   letter-spacing: -0.01em;
   text-align: center;
   color: var(--main);
+}
+
+.isActive {
+  border-color: var(--button);
 }

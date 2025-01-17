@@ -18,7 +18,7 @@ const filtersSlice = createSlice({
       state.location = action.payload;
     },
     setForm(state, action) {
-      state.type = action.payload;
+      state.form = action.payload;
     },
     toggleFeature(state, action) {
       const equipment = action.payload;

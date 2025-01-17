@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import css from "./HomePage.module.css";
+import Button from "../../components/ui/Button/Button.jsx";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -16,9 +17,9 @@ export default function HomePage() {
             You can find everything you want in our catalog
           </p>
         </div>
-        <button onClick={handleClick} className={css.button}>
+        <Button style="view" onClick={handleClick}>
           View Now
-        </button>
+        </Button>
       </div>
     </>
   );

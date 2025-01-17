@@ -5,6 +5,7 @@ import { selectEquipment } from "../../redux/selectors";
 import { toggleFeature } from "../../redux/filtersSlice";
 import { useDispatch } from "react-redux";
 import clsx from "clsx";
+import Line from "../ui/Line/line";
 
 export default function EquipmentsList({ data }) {
   const isSelect = useSelector(selectEquipment);
@@ -16,7 +17,7 @@ export default function EquipmentsList({ data }) {
   return (
     <div className={css.wrap}>
       <p className={css.title}>Vehicle equipment</p>
-      <hr className={css.line}></hr>
+      <Line />
       <ul className={css.list}>
         {data.map((item) => {
           return (
@@ -28,7 +29,7 @@ export default function EquipmentsList({ data }) {
               })}
             >
               <div>{React.cloneElement(item.icon)}</div>
-              {item.label}
+              <p> {item.label}</p>
             </li>
           );
         })}

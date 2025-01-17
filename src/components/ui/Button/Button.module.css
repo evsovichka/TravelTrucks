@@ -1,0 +1,37 @@
+.button {
+  border-radius: 200px;
+  border: none;
+  padding: 16px 60px;
+  width: 166px;
+  height: 56px;
+  background: var(--button);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+}
+
+.loadMore {
+  border: 1px solid var(--gray-light);
+  background: var(--white);
+  border-radius: 200px;
+  padding: 16px 32px;
+  width: 145px;
+  height: 56px;
+  color: var(--main);
+}
+
+.loadMore:hover {
+  border-color: var(--button-hover);
+}
+
+.view {
+  width: 173px;
+  padding: 16px 48.5px;
+}
