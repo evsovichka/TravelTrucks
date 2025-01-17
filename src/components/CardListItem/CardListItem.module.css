@@ -35,6 +35,10 @@
   font-size: 24px;
   line-height: 133%;
   color: var(--main);
+  max-width: 339px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .priceBox {
@@ -56,6 +60,9 @@
   gap: 16px;
 }
 
+.rating {
+  text-decoration: underline;
+}
 .description {
   width: 525px;
   padding-right: 20px;

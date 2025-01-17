@@ -1,3 +1,4 @@
+import CategoriesList from "../CategoriesList/CategoriesList";
 import Button from "../ui/Button/Button";
 import Heart from "../ui/icons/Heart";
 import LocationIcon from "../ui/icons/locationIcon";
@@ -28,7 +29,7 @@ export default function CardListItem({ data }) {
               ) : (
                 <StarRating color={"#f2f4f7"} />
               )}
-              <p>
+              <p className={css.rating}>
                 {data.rating}({data.reviews.length} Reviews)
               </p>
             </div>
@@ -39,6 +40,7 @@ export default function CardListItem({ data }) {
           </div>
         </div>
         <p className={css.description}> {data.description}</p>
+        <CategoriesList item={data} limit={4} />
         <Button style="show">Show More</Button>
       </div>
     </div>

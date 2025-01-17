@@ -21,4 +21,8 @@
 
 .rightBox {
   max-width: 888px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
 }

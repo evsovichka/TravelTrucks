@@ -8,7 +8,12 @@ import EquipmentsList from "../../components/EquipmentsList/EquipmentsList.jsx";
 import VehicleTypesList from "../../components/VehicleTypesList/VehicleTypesList.jsx";
 import { VehicleTypes } from "../../data/vehicleTypes.jsx";
 import Button from "../../components/ui/Button/Button.jsx";
-import { selectCampers, selectCurrentPage } from "../../redux/selectors.js";
+import {
+  selectCampers,
+  selectCurrentPage,
+  selectLimit,
+  selectTotalItems,
+} from "../../redux/selectors.js";
 import { setCurrentPage } from "../../redux/campersSlice.js";
 import CardList from "../../components/CardList/CardList.jsx";
 
@@ -17,17 +22,21 @@ export default function CatalogPage() {
   const currentPage = useSelector(selectCurrentPage);
   const campersItems = useSelector(selectCampers);
   const hasFetched = useRef(false);
+  const limit = useSelector(selectLimit);
+  const totalItems = useSelector(selectTotalItems);
+  const totalPages = totalItems / limit;
 
   useEffect(() => {
     if (!hasFetched.current) {
-      dispatch(fetchCampers(currentPage));
+      dispatch(fetchCampers({ currentPage, limit }));
       hasFetched.current = true;
     }
-  }, [dispatch, currentPage]);
+  }, [dispatch, currentPage, limit]);
 
   const handleClick = () => {
-    dispatch(setCurrentPage(currentPage + 1));
-    dispatch(fetchCampers(currentPage + 1));
+    const nextPage = currentPage + 1;
+    dispatch(setCurrentPage(nextPage));
+    dispatch(fetchCampers({ currentPage: nextPage, limit }));
   };
   return (
     <section className={css.section}>
@@ -40,9 +49,11 @@ export default function CatalogPage() {
       </div>
       <div className={css.rightBox}>
         <CardList data={campersItems} />
-        <Button style="loadMore" onClick={handleClick}>
-          Load More
-        </Button>
+        {campersItems.length > 0 && totalPages > currentPage && (
+          <Button style="loadMore" onClick={handleClick}>
+            Load More
+          </Button>
+        )}
       </div>
     </section>
   );

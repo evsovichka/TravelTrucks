@@ -8,6 +8,8 @@ const campersSlice = createSlice({
     isLoading: false,
     error: null,
     currentPage: 1,
+    totalItems: 0,
+    limit: 4,
   },
   reducers: {
     setCurrentPage(state, action) {
@@ -23,6 +25,7 @@ const campersSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items.push(...action.payload.items);
+        state.totalItems = action.payload.total;
       })
       .addCase(fetchCampers.rejected, (state, action) => {
         state.isLoading = false;
