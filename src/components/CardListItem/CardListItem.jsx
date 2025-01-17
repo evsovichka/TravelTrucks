@@ -12,6 +12,7 @@ export default function CardListItem({ data }) {
   const dispatch = useDispatch();
   const favoriteItems = useSelector(selectFavoriteCampers);
   const isFavorite = favoriteItems.includes(data.id);
+  const isRating = data.rating > 0;
 
   const handleFavoriteClick = () => {
     if (isFavorite) {
@@ -38,11 +39,7 @@ export default function CardListItem({ data }) {
           </div>
           <div className={css.ratingLocationWrapper}>
             <div className={css.ratingLocationBoxes}>
-              {data.rating > 0 ? (
-                <StarRating color={"#ffc531"} />
-              ) : (
-                <StarRating color={"#f2f4f7"} />
-              )}
+              <StarRating isRating={isRating} />
               <p className={css.rating}>
                 {data.rating}({data.reviews.length} Reviews)
               </p>
