@@ -12,11 +12,13 @@ import {
   selectCampers,
   selectCurrentPage,
   selectFavoriteCampers,
+  selectIsLoading,
   selectLimit,
   selectTotalItems,
 } from "../../redux/selectors.js";
 import { setCurrentPage } from "../../redux/campersSlice.js";
 import CardList from "../../components/CardList/CardList.jsx";
+import Loader from "../../components/Loader/Loader.jsx";
 
 export default function CatalogPage() {
   const dispatch = useDispatch();
@@ -27,6 +29,7 @@ export default function CatalogPage() {
   const totalItems = useSelector(selectTotalItems);
   const totalPages = totalItems / limit;
   const favorites = useSelector(selectFavoriteCampers);
+  const isLoading = useSelector(selectIsLoading);
 
   const favoriteItems = campersItems.filter((item) =>
     favorites.includes(item.id)
@@ -63,6 +66,7 @@ export default function CatalogPage() {
             Load More
           </Button>
         )}
+        {isLoading && <Loader />}
       </div>
     </section>
   );
