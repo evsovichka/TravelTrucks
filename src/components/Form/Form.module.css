@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formInput {
+  border-radius: 12px;
+  padding: 18px 337px 18px 18px;
+  height: 60px;
+  background: var(--inputs);
+  border: none;
+  width: 527px;
+}
+
+.textarea {
+  border-radius: 10px;
+  padding: 18px 308px 76px 18px;
+  height: 118px;
+  background: var(--inputs);
+  border: none;
+  width: 527px;
+  resize: none;
+}
+
+.formInput::placeholder {
+  line-height: 1.5;
+  color: var(--gray);
+}
+.textarea::placeholder {
+  line-height: 1.5;
+  color: var(--gray);
+}

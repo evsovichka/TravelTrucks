@@ -1,5 +1,6 @@
 import css from "./BookingForm.module.css";
 import Button from "../ui/Button/Button.jsx";
+import Form from "../Form/Form.jsx";
 
 export default function BookingForm() {
   return (
@@ -10,7 +11,10 @@ export default function BookingForm() {
           Stay connected! We are always ready to help you.
         </p>
       </div>
-      <Button>Send</Button>
+      <Form />
+      <div className={css.button}>
+        <Button>Send</Button>
+      </div>
     </div>
   );
 }
