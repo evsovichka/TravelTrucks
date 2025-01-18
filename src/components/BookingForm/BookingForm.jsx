@@ -1,5 +1,3 @@
 export default function BookingForm() {
-    return (
-        <></>
-    )
+  return <h1>Forma</h1>;
 }

@@ -1,13 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import css from "./DetailsPage.module.css";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { fetchById } from "../../redux/operations.js";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { selectIsLoading, selectOneCamper } from "../../redux/selectors.js";
 import Loader from "../../components/Loader/Loader.jsx";
 import StarRating from "../../components/ui/icons/StarRating.jsx";
 import LocationIcon from "../../components/ui/icons/locationIcon.jsx";
 import PhotoList from "../../components/PhotoList/PhotoList.jsx";
+import SuspenseFallback from "../../components/SuspenseFallback/SuspenseFallback.jsx";
+import ReviewsFeaturesNavList from "../../components/ReviewsFeaturesNavList/ReviewsFeaturesNavList.jsx";
+import BookingForm from "../../components/BookingForm/BookingForm.jsx";
 
 export default function DetailsPage() {
   const dispatch = useDispatch();
@@ -42,6 +45,15 @@ export default function DetailsPage() {
         </div>
         <PhotoList data={camper.gallery} />
         <p className={css.description}>{camper.description}</p>
+      </div>
+      <div className={css.bottom}>
+        <ReviewsFeaturesNavList />
+        <div className={css.bottombox}>
+          <Suspense fallback={<SuspenseFallback />}>
+            <Outlet />
+          </Suspense>
+          <BookingForm />
+        </div>
       </div>
     </section>
   );

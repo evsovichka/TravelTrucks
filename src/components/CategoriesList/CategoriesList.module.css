@@ -5,7 +5,7 @@
   gap: 8px;
 }
 .categoriesListBox {
-  max-width: 430px;
+  width: 100%;
 }
 .item {
   display: flex;

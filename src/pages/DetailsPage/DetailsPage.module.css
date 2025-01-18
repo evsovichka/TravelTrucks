@@ -1,5 +1,8 @@
 .section {
   padding: 48px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
 .top {
@@ -37,4 +40,16 @@
 .description {
   line-height: 150%;
   color: var(--text);
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.bottombox {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
 }

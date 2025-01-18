@@ -1,0 +1,25 @@
+.wrapper {
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.link {
+  font-size: 20px;
+  line-height: 1.2;
+  padding-bottom: 24px;
+}
+
+.activeLink {
+  border-bottom: 5px solid var(--button);
+}
+
+.line {
+  position: relative;
+  top: -3px;
+  z-index: -2;
+}
