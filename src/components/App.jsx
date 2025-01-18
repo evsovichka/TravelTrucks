@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import { lazy } from "react";
 import Reviews from "./Reviews/Reviews.jsx";
@@ -22,6 +22,7 @@ function App() {
           <Route path="/catalog/:id" element={<DetailsPage />}>
             <Route path="reviews" element={<Reviews />} />
             <Route path="features" element={<Features />} />
+            <Route path="" element={<Navigate to="features" />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

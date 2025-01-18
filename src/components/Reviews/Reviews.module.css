@@ -1,0 +1,45 @@
+.wrap {
+  width: 631px;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+.avatarSymbol {
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  background: var(--badges);
+  font-size: 24px;
+  line-height: 1.33333;
+  color: var(--button);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nameRatingBox {
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.topWrap {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.text {
+  color: var(--text);
+}
