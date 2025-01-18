@@ -18,6 +18,7 @@
   align-items: flex-start;
   z-index: 1;
   height: 100vh;
+  position: fixed;
 }
 .textWrapper {
   display: flex;
