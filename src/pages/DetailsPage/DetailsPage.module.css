@@ -1,0 +1,40 @@
+.section {
+  padding: 48px 64px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.topInfoBox {
+  width: 100%;
+}
+.title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+}
+
+.ratingLoctionWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding-bottom: 8px;
+}
+
+.ratingLocationBoxes {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  line-height: 150%;
+}
+
+.rating {
+  text-decoration: underline;
+}
+
+.description {
+  line-height: 150%;
+  color: var(--text);
+}

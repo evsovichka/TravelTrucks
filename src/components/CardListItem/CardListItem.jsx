@@ -7,12 +7,18 @@ import StarRating from "../ui/icons/StarRating";
 import css from "./CardListItem.module.css";
 import { selectFavoriteCampers } from "../../redux/selectors";
 import { addFavorite, deleteFavorite } from "../../redux/favoriteSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function CardListItem({ data }) {
   const dispatch = useDispatch();
   const favoriteItems = useSelector(selectFavoriteCampers);
   const isFavorite = favoriteItems.includes(data.id);
   const isRating = data.rating > 0;
+  const navigate = useNavigate();
+
+  const handleShowMoreClick = () => {
+    navigate(`/catalog/${data.id}`);
+  };
 
   const handleFavoriteClick = () => {
     if (isFavorite) {
@@ -52,7 +58,9 @@ export default function CardListItem({ data }) {
         </div>
         <p className={css.description}> {data.description}</p>
         <CategoriesList item={data} limit={4} />
-        <Button style="show">Show More</Button>
+        <Button onClick={handleShowMoreClick} style="show">
+          Show More
+        </Button>
       </div>
     </div>
   );
