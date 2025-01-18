@@ -1,0 +1,27 @@
+.box {
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+  padding: 44px 57px;
+  width: 641px;
+  height: 588px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.text {
+  line-height: 1.5;
+  color: var(--gray);
+}
