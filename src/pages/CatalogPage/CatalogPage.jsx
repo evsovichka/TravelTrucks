@@ -39,7 +39,7 @@ export default function CatalogPage() {
   );
 
   useEffect(() => {
-    if (!hasFetched.current) {
+    if (!hasFetched.current && campersItems.length === 0) {
       dispatch(fetchCampers({ currentPage, limit }));
       hasFetched.current = true;
     }
@@ -60,7 +60,9 @@ export default function CatalogPage() {
         <Button>Search</Button>
       </div>
       <div className={css.rightBox}>
-        <CardList data={[...favoriteItems, ...nonFavoriteItems]} />
+        {campersItems.length > 0 && (
+          <CardList data={[...favoriteItems, ...nonFavoriteItems]} />
+        )}
         {campersItems.length > 0 && totalPages > currentPage && (
           <Button style="loadMore" onClick={handleClick}>
             Load More
