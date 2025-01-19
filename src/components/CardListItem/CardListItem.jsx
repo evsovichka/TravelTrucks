@@ -1,19 +1,21 @@
 import { useDispatch, useSelector } from "react-redux";
-import CategoriesList from "../CategoriesList/CategoriesList";
-import Button from "../ui/Button/Button";
-import Heart from "../ui/icons/Heart";
-import LocationIcon from "../ui/icons/locationIcon";
-import StarRating from "../ui/icons/StarRating";
+import CategoriesList from "../CategoriesList/CategoriesList.jsx";
+import Button from "../ui/Button/Button.jsx";
+import Heart from "../ui/icons/Heart.jsx";
+import LocationIcon from "../ui/icons/LocationIcon.jsx";
+import StarRating from "../ui/icons/StarRating.jsx";
+import {
+  selectFavoriteCampers,
+  selectOneCamper,
+} from "../../redux/selectors.js";
+import { addFavorite, deleteFavorite } from "../../redux/favoriteSlice.js";
 import css from "./CardListItem.module.css";
-import { selectFavoriteCampers, selectOneCamper } from "../../redux/selectors";
-import { addFavorite, deleteFavorite } from "../../redux/favoriteSlice";
 
 export default function CardListItem({ data }) {
   const dispatch = useDispatch();
   const favoriteItems = useSelector(selectFavoriteCampers);
   const isFavorite = favoriteItems.includes(data.id);
   const isRating = data.rating > 0;
-  const camper = useSelector(selectOneCamper);
 
   const handleShowMoreClick = () => {
     window.open(`/catalog/${data.id}`, "_blank");

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
+import Line from "../ui/Line/line.jsx";
 import css from "./ReviewsFeaturesNavList.module.css";
-import Line from "../ui/Line/line";
 
 export default function ReviewsFeaturesNavList() {
   return (

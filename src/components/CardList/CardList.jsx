@@ -1,4 +1,4 @@
-import CardListItem from "../CardListItem/CardListItem";
+import CardListItem from "../CardListItem/CardListItem.jsx";
 import css from "./CardList.module.css";
 
 export default function CardList({ data }) {

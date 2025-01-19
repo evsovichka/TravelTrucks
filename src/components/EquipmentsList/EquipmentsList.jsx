@@ -1,11 +1,11 @@
 import React from "react";
-import css from "./EquipmentsList.module.css";
-import { useSelector } from "react-redux";
-import { selectEquipment } from "../../redux/selectors";
-import { toggleFeature } from "../../redux/filtersSlice";
 import { useDispatch } from "react-redux";
 import clsx from "clsx";
-import Line from "../ui/Line/line";
+import { useSelector } from "react-redux";
+import { selectEquipment } from "../../redux/selectors.js";
+import { toggleFeature } from "../../redux/filtersSlice.js";
+import Line from "../ui/Line/line.jsx";
+import css from "./EquipmentsList.module.css";
 
 export default function EquipmentsList({ data }) {
   const isSelect = useSelector(selectEquipment);

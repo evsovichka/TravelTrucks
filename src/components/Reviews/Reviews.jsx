@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import Rating from "../Rating/Rating.jsx";
-import { selectOneCamper } from "../../redux/selectors";
+import { selectOneCamper } from "../../redux/selectors.js";
 import css from "./Reviews.module.css";
 
 export default function Reviews() {

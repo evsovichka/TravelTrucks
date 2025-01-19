@@ -1,9 +1,9 @@
-import AppBar from "../AppBar/AppBar.jsx";
 import { Suspense } from "react";
-import css from "./Loyout.module.css";
-import SuspenseFallback from "../SuspenseFallback/SuspenseFallback.jsx";
 import { useLocation } from "react-router-dom";
 import clsx from "clsx";
+import AppBar from "../AppBar/AppBar.jsx";
+import SuspenseFallback from "../SuspenseFallback/SuspenseFallback.jsx";
+import css from "./Loyout.module.css";
 
 export default function Layout({ children }) {
   const location = useLocation();

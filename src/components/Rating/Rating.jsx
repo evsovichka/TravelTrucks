@@ -1,4 +1,4 @@
-import StarRating from "../ui/icons/StarRating";
+import StarRating from "../ui/icons/StarRating.jsx";
 import css from "./Rating.module.css";
 
 export default function Rating({ data }) {

@@ -1,4 +1,4 @@
-import Line from "../ui/Line/line";
+import Line from "../ui/Line/line.jsx";
 import css from "./VehicleDetailsList.module.css";
 
 export default function VehicleDetailsList({ data }) {

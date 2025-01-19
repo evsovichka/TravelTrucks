@@ -1,9 +1,8 @@
-import LocationIcon from "../ui/icons/locationIcon.jsx";
-import css from "./LocationInput.module.css";
+import LocationIcon from "../ui/icons/LocationIcon.jsx";
 import { selectLocation } from "../../redux/selectors.js";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { setLocation } from "../../redux/filtersSlice.js";
-import { useDispatch } from "react-redux";
+import css from "./LocationInput.module.css";
 
 export default function LocationInput() {
   const location = useSelector(selectLocation);
