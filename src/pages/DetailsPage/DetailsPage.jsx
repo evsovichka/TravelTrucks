@@ -4,7 +4,7 @@ import { fetchById } from "../../redux/operations.js";
 import { Suspense, useEffect } from "react";
 import { selectOneCamper } from "../../redux/selectors.js";
 import StarRating from "../../components/ui/icons/StarRating.jsx";
-import LocationIcon from "../../components/ui/icons/locationIcon.jsx";
+import LocationIcon from "../../components/ui/icons/LocationIcon.jsx";
 import PhotoList from "../../components/PhotoList/PhotoList.jsx";
 import SuspenseFallback from "../../components/SuspenseFallback/SuspenseFallback.jsx";
 import ReviewsFeaturesNavList from "../../components/ReviewsFeaturesNavList/ReviewsFeaturesNavList.jsx";
@@ -15,13 +15,12 @@ export default function DetailsPage() {
   const dispatch = useDispatch();
   const { id } = useParams();
 
-  const camper = useSelector(selectOneCamper);
-  const isRating = camper.rating > 0;
-  console.log(camper.reviews.length);
-
   useEffect(() => {
     dispatch(fetchById({ id }));
   }, [dispatch, id]);
+
+  const camper = useSelector(selectOneCamper);
+  const isRating = camper.rating > 0;
 
   return (
     <section className={css.section}>
