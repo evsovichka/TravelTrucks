@@ -1,21 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
-import css from "./DetailsPage.module.css";
 import { Outlet, useParams } from "react-router-dom";
 import { fetchById } from "../../redux/operations.js";
 import { Suspense, useEffect } from "react";
-import { selectIsLoading, selectOneCamper } from "../../redux/selectors.js";
-// import Loader from "../../components/Loader/Loader.jsx";
+import { selectOneCamper } from "../../redux/selectors.js";
 import StarRating from "../../components/ui/icons/StarRating.jsx";
 import LocationIcon from "../../components/ui/icons/locationIcon.jsx";
 import PhotoList from "../../components/PhotoList/PhotoList.jsx";
 import SuspenseFallback from "../../components/SuspenseFallback/SuspenseFallback.jsx";
 import ReviewsFeaturesNavList from "../../components/ReviewsFeaturesNavList/ReviewsFeaturesNavList.jsx";
 import BookingForm from "../../components/BookingForm/BookingForm.jsx";
+import css from "./DetailsPage.module.css";
 
 export default function DetailsPage() {
   const dispatch = useDispatch();
   const { id } = useParams();
-  // const isLoading = useSelector(selectIsLoading);
+
   const camper = useSelector(selectOneCamper);
   const isRating = camper.rating > 0;
   console.log(camper.reviews.length);
@@ -26,7 +25,6 @@ export default function DetailsPage() {
 
   return (
     <section className={css.section}>
-      {/* {isLoading && <Loader />} */}
       <div className={css.top}>
         <div className={css.topInfoBox}>
           <p className={css.title}>{camper.name}</p>

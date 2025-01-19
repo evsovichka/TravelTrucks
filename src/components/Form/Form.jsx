@@ -20,7 +20,7 @@ const bookingSchema = Yup.object().shape({
 const initialValues = {
   username: "",
   email: "",
-  date: [new Date(), null],
+  date: [null, null],
   comment: "",
 };
 
