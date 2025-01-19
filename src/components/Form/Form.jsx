@@ -4,6 +4,8 @@ import * as Yup from "yup";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import css from "./Form.module.css";
+import toast from "react-hot-toast";
+import Button from "../ui/Button/Button.jsx";
 
 const bookingSchema = Yup.object().shape({
   username: Yup.string().min(2, "Short").max(30, "Long").required("Required"),
@@ -26,8 +28,8 @@ const formforbooking = () => {
   const id = useId();
 
   const handleSubmit = (values, actions) => {
-    console.log(values);
     actions.resetForm();
+    toast.success("Your booking has been successfully confirmed!");
   };
 
   return (
@@ -36,42 +38,60 @@ const formforbooking = () => {
       onSubmit={handleSubmit}
       validationSchema={bookingSchema}
     >
-      {({ setFieldValue, values }) => (
+      {({ setFieldValue, values, errors }) => (
         <Form className={css.form}>
-          <div>
+          <div className={css.inputContainer}>
             <Field
               type="text"
               name="username"
               id={`${id}-username`}
               placeholder="Name*"
-              className={css.formInput}
+              className={`${css.formInput} ${
+                errors.username ? css.errorInput : ""
+              }`}
             />
-            <ErrorMessage name="username" component="span" />
+            <ErrorMessage
+              name="username"
+              component="span"
+              className={css.errorMessage}
+            />
           </div>
-          <div>
+          <div className={css.inputContainer}>
             <Field
               type="text"
               name="email"
               id={`${id}-email`}
               placeholder="Email*"
-              className={css.formInput}
+              className={`${css.formInput} ${
+                errors.email ? css.errorInput : ""
+              }`}
             />
-            <ErrorMessage name="email" component="span" />
+            <ErrorMessage
+              name="email"
+              component="span"
+              className={css.errorMessage}
+            />
           </div>
-          <div>
+          <div className={css.inputContainer}>
             <DatePicker
               selectsRange
               startDate={values.date[0]}
               endDate={values.date[1]}
+              minDate={new Date()}
               onChange={(update) => {
                 setFieldValue("date", update);
               }}
               isClearable={true}
               dateFormat="yyyy/MM/dd"
               placeholderText="Booking date*"
-              className={css.formInput}
+              className={`${css.formInput} ${
+                errors.date ? css.errorInput : ""
+              }`}
+              calendarClassName={css.customCalendar}
             />
-            <ErrorMessage name="date" component="span" />
+            {errors.date && (
+              <span className={css.errorMessage}>{errors.date}</span>
+            )}
           </div>
           <div>
             <Field
@@ -81,7 +101,9 @@ const formforbooking = () => {
               placeholder="Comment"
               className={css.textarea}
             />
-            <ErrorMessage name="comment" component="span" />
+          </div>
+          <div className={css.button}>
+            <Button>Send</Button>
           </div>
         </Form>
       )}

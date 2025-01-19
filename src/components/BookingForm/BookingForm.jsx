@@ -12,9 +12,6 @@ export default function BookingForm() {
         </p>
       </div>
       <Form />
-      <div className={css.button}>
-        <Button>Send</Button>
-      </div>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { lazy } from "react";
 import Reviews from "./Reviews/Reviews.jsx";
 import Layout from "./Loyout/Layout.jsx";
 import Features from "../components/Features/Features.jsx";
+import { Toaster } from "react-hot-toast";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage.jsx"));
 const DetailsPage = lazy(() => import("../pages/DetailsPage/DetailsPage.jsx"));
@@ -27,6 +28,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
+      <Toaster />
     </div>
   );
 }

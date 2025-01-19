@@ -6,11 +6,12 @@
 
 .formInput {
   border-radius: 12px;
-  padding: 18px 337px 18px 18px;
+  padding: 18px;
   height: 60px;
   background: var(--inputs);
   border: none;
   width: 527px;
+  transition: border 0.3s;
 }
 
 .textarea {
@@ -30,4 +31,38 @@
 .textarea::placeholder {
   line-height: 1.5;
   color: var(--gray);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.inputContainer {
+  position: relative;
+  width: 527px;
+}
+.errorMessage {
+  color: var(--button); /* Колір тексту помилки */
+  position: absolute;
+  bottom: -11px;
+  right: 0;
+  font-size: 10px;
+}
+
+.errorInput {
+  border: 1px solid var(--button);
+}
+
+div.react-datepicker {
+  width: 276px;
+  height: 284px;
+}
+
+.react-datepicker .react-datepicker__header {
+  background-color: var(--white);
+}
+.today {
+  background-color: #007bff; /* Колір фону для сьогоднішнього дня */
+  color: white; /* Колір тексту для сьогоднішнього дня */
 }

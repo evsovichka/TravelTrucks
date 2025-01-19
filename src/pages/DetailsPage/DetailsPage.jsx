@@ -4,7 +4,7 @@ import { Outlet, useParams } from "react-router-dom";
 import { fetchById } from "../../redux/operations.js";
 import { Suspense, useEffect } from "react";
 import { selectIsLoading, selectOneCamper } from "../../redux/selectors.js";
-import Loader from "../../components/Loader/Loader.jsx";
+// import Loader from "../../components/Loader/Loader.jsx";
 import StarRating from "../../components/ui/icons/StarRating.jsx";
 import LocationIcon from "../../components/ui/icons/locationIcon.jsx";
 import PhotoList from "../../components/PhotoList/PhotoList.jsx";
@@ -15,9 +15,10 @@ import BookingForm from "../../components/BookingForm/BookingForm.jsx";
 export default function DetailsPage() {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const isLoading = useSelector(selectIsLoading);
+  // const isLoading = useSelector(selectIsLoading);
   const camper = useSelector(selectOneCamper);
   const isRating = camper.rating > 0;
+  console.log(camper.reviews.length);
 
   useEffect(() => {
     dispatch(fetchById({ id }));
@@ -25,7 +26,7 @@ export default function DetailsPage() {
 
   return (
     <section className={css.section}>
-      {isLoading && <Loader />}
+      {/* {isLoading && <Loader />} */}
       <div className={css.top}>
         <div className={css.topInfoBox}>
           <p className={css.title}>{camper.name}</p>
