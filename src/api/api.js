@@ -19,6 +19,7 @@ export const fetchAllCampers = async ({ currentPage, limit, filters }) => {
 };
 
 export const fetchCamperById = async (id) => {
+  console.log(id);
   const response = await axios.get(`/${id}`);
   return response.data;
 };

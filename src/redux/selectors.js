@@ -1,5 +1,4 @@
 export const selectCampers = (state) => state.campers.items;
-export const selectOneCamper = (state) => state.campers.camper;
 export const selectIsLoading = (state) => state.campers.isLoading;
 export const selectError = (state) => state.campers.error;
 export const selectCurrentPage = (state) => state.campers.currentPage;
@@ -9,3 +8,6 @@ export const selectFavoriteCampers = (state) => state.favorites.items;
 export const selectLocation = (state) => state.filters.location;
 export const selectEquipment = (state) => state.filters.equipment;
 export const selectForm = (state) => state.filters.form;
+export const selectCamperById = (state) => state.camperById.item;
+export const selectCamperByIdLoading = (state) => state.camperById.isLoading;
+export const selectCamperByIdError = (state) => state.camperById.error;

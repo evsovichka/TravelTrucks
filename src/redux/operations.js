@@ -16,9 +16,10 @@ export const fetchCampers = createAsyncThunk(
 );
 
 export const fetchById = createAsyncThunk(
-  "campers/fetchById",
+  "camperById/fetchById",
   async (id, thunkAPI) => {
     try {
+      console.log(id);
       const data = await fetchCamperById(id);
       return data;
     } catch (error) {

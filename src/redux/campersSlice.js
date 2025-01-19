@@ -14,7 +14,6 @@ const campersSlice = createSlice({
   name: "campers",
   initialState: {
     items: [],
-    camper: {},
     isLoading: false,
     error: null,
     currentPage: 1,
@@ -38,14 +37,7 @@ const campersSlice = createSlice({
         state.items.push(...action.payload.items);
         state.totalItems = action.payload.total;
       })
-      .addCase(fetchCampers.rejected, handleRejected)
-      .addCase(fetchById.pending, handlePending)
-      .addCase(fetchById.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.camper = action.payload;
-      })
-      .addCase(fetchById.rejected, handleRejected);
+      .addCase(fetchCampers.rejected, handleRejected);
   },
 });
 
