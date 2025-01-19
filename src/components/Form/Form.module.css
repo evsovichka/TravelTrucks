@@ -43,7 +43,7 @@
   width: 527px;
 }
 .errorMessage {
-  color: var(--button); /* Колір тексту помилки */
+  color: var(--button);
   position: absolute;
   bottom: -11px;
   right: 0;
@@ -54,7 +54,7 @@
   border: 1px solid var(--button);
 }
 
-div.react-datepicker {
+/* div.react-datepicker {
   width: 276px;
   height: 284px;
 }
@@ -63,6 +63,6 @@ div.react-datepicker {
   background-color: var(--white);
 }
 .today {
-  background-color: #007bff; /* Колір фону для сьогоднішнього дня */
-  color: white; /* Колір тексту для сьогоднішнього дня */
-}
+  background-color: #007bff; 
+  color: white; 
+} */

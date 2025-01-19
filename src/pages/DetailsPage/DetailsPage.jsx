@@ -37,30 +37,25 @@ export default function DetailsPage() {
           <div className={css.top}>
             <div className={css.topInfoBox}>
               <p className={css.title}>{camper.name}</p>
-
               <div className={css.ratingLoctionWrapper}>
                 <div className={css.ratingLocationBoxes}>
                   <StarRating isRating={isRating} size={16} />
-
                   <p className={css.rating}>
-                    {camper.rating}({camper.reviews.length} Reviews) //{" "}
+                    {camper.rating}({camper.reviews.length} Reviews)
                   </p>
                 </div>
-
                 <div className={css.ratingLocationBoxes}>
                   <LocationIcon size={16} />
                   {camper.location.replace(/(.+), (.+)/, "$2, $1")}
                 </div>
-                <p className={css.title}>€{camper.price}</p>
               </div>
-              <PhotoList data={camper.gallery} />
-              <p className={css.description}>{camper.description}</p>
+              <p className={css.title}>€{camper.price}</p>
             </div>
+            <PhotoList data={camper.gallery} />
+            <p className={css.description}>{camper.description}</p>
           </div>
-
           <div className={css.bottom}>
             <ReviewsFeaturesNavList />
-
             <div className={css.bottombox}>
               <Suspense fallback={<SuspenseFallback />}>
                 <Outlet />
