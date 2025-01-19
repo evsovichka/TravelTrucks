@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { useSelector } from "react-redux";
 import { selectEquipment } from "../../redux/selectors.js";
 import { toggleFeature } from "../../redux/filtersSlice.js";
-import Line from "../ui/Line/line.jsx";
+import Line from "../ui/Line/Line.jsx";
 import css from "./EquipmentsList.module.css";
 
 export default function EquipmentsList({ data }) {
