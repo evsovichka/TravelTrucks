@@ -4,10 +4,10 @@ import { lazy } from "react";
 import Reviews from "./Reviews/Reviews.jsx";
 import Layout from "./Loyout/Layout.jsx";
 import Features from "../components/Features/Features.jsx";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import Loader from "./Loader/Loader.jsx";
 import { useSelector } from "react-redux";
-import { selectIsLoading } from "../redux/selectors.js";
+import { selectError, selectIsLoading } from "../redux/selectors.js";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage.jsx"));
 const DetailsPage = lazy(() => import("../pages/DetailsPage/DetailsPage.jsx"));
@@ -18,9 +18,12 @@ const NotFoundPage = lazy(() =>
 
 function App() {
   const isLoading = useSelector(selectIsLoading);
+  const isError = useSelector(selectError);
+
   return (
     <div>
       {isLoading && <Loader />}
+      {isError && toast.error("Something went wrong")}
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />

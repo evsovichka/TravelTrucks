@@ -5,19 +5,18 @@ import Heart from "../ui/icons/Heart";
 import LocationIcon from "../ui/icons/locationIcon";
 import StarRating from "../ui/icons/StarRating";
 import css from "./CardListItem.module.css";
-import { selectFavoriteCampers } from "../../redux/selectors";
+import { selectFavoriteCampers, selectOneCamper } from "../../redux/selectors";
 import { addFavorite, deleteFavorite } from "../../redux/favoriteSlice";
-import { useNavigate } from "react-router-dom";
 
 export default function CardListItem({ data }) {
   const dispatch = useDispatch();
   const favoriteItems = useSelector(selectFavoriteCampers);
   const isFavorite = favoriteItems.includes(data.id);
   const isRating = data.rating > 0;
-  const navigate = useNavigate();
+  const camper = useSelector(selectOneCamper);
 
   const handleShowMoreClick = () => {
-    navigate(`/catalog/${data.id}`);
+    window.open(`/catalog/${data.id}`, "_blank");
   };
 
   const handleFavoriteClick = () => {

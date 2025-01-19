@@ -11,11 +11,14 @@ import Button from "../../components/ui/Button/Button.jsx";
 import {
   selectCampers,
   selectCurrentPage,
+  selectEquipment,
   selectFavoriteCampers,
+  selectForm,
   selectLimit,
+  selectLocation,
   selectTotalItems,
 } from "../../redux/selectors.js";
-import { setCurrentPage } from "../../redux/campersSlice.js";
+import { setCurrentPage, setRemoveItems } from "../../redux/campersSlice.js";
 import CardList from "../../components/CardList/CardList.jsx";
 
 export default function CatalogPage() {
@@ -28,6 +31,10 @@ export default function CatalogPage() {
   const totalPages = totalItems / limit;
   const favorites = useSelector(selectFavoriteCampers);
 
+  const location = useSelector(selectLocation);
+  const equipment = useSelector(selectEquipment);
+  const form = useSelector(selectForm);
+
   const favoriteItems = campersItems.filter((item) =>
     favorites.includes(item.id)
   );
@@ -37,16 +44,52 @@ export default function CatalogPage() {
 
   useEffect(() => {
     if (!hasFetched.current && campersItems.length === 0) {
-      dispatch(fetchCampers({ currentPage, limit }));
+      dispatch(
+        fetchCampers({
+          currentPage,
+          limit,
+          filters: {},
+        })
+      );
       hasFetched.current = true;
     }
   }, [dispatch, currentPage, limit]);
 
-  const handleClick = () => {
+  const handleLoadMoreClick = () => {
     const nextPage = currentPage + 1;
     dispatch(setCurrentPage(nextPage));
-    dispatch(fetchCampers({ currentPage: nextPage, limit }));
+    dispatch(
+      fetchCampers({
+        currentPage: nextPage,
+        limit,
+        filters: {
+          location,
+          equipment,
+          form,
+        },
+      })
+    );
   };
+
+  const handleSearchClick = () => {
+    dispatch(setRemoveItems());
+    localStorage.removeItem("campers");
+    localStorage.removeItem("filters");
+    dispatch(setCurrentPage(1));
+
+    dispatch(
+      fetchCampers({
+        currentPage,
+        limit,
+        filters: {
+          location,
+          equipment,
+          form,
+        },
+      })
+    );
+  };
+
   return (
     <section className={css.section}>
       <div className={css.leftBox}>
@@ -54,14 +97,16 @@ export default function CatalogPage() {
         <p className={css.text}>Filters</p>
         <EquipmentsList data={equipmentList} />
         <VehicleTypesList data={VehicleTypes} />
-        <Button>Search</Button>
+        <Button onClick={handleSearchClick}>Search</Button>
       </div>
       <div className={css.rightBox}>
-        {campersItems.length > 0 && (
+        {campersItems.length > 0 ? (
           <CardList data={[...favoriteItems, ...nonFavoriteItems]} />
+        ) : (
+          <p className={css.title}> No proposition yet</p>
         )}
         {campersItems.length > 0 && totalPages > currentPage && (
-          <Button style="loadMore" onClick={handleClick}>
+          <Button style="loadMore" onClick={handleLoadMoreClick}>
             Load More
           </Button>
         )}

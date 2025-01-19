@@ -10,7 +10,11 @@ export default function VehicleTypesList({ data }) {
   const selectedType = useSelector(selectForm);
   const dispatch = useDispatch();
   const handleChange = (value) => {
-    dispatch(setForm(value));
+    if (selectedType === value) {
+      dispatch(setForm(null));
+    } else {
+      dispatch(setForm(value));
+    }
   };
 
   return (

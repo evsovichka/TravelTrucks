@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchById, fetchCampers } from "./operations.js";
+import storage from "redux-persist/lib/storage";
 
 function handlePending(state) {
   state.isLoading = true;
@@ -25,6 +26,9 @@ const campersSlice = createSlice({
     setCurrentPage(state, action) {
       state.currentPage = action.payload;
     },
+    setRemoveItems(state) {
+      state.items = [];
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -46,5 +50,6 @@ const campersSlice = createSlice({
   },
 });
 
-export const setCurrentPage = campersSlice.actions.setCurrentPage;
+export const { setCurrentPage, setRemoveItems } = campersSlice.actions;
+
 export default campersSlice.reducer;
