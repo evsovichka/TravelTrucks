@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { fetchAllCampers, fetchCamperByid } from "../api/api.js";
+import { fetchAllCampers, fetchCamperById } from "../api/api.js";
 import toast from "react-hot-toast";
 
 export const fetchCampers = createAsyncThunk(
@@ -17,9 +17,9 @@ export const fetchCampers = createAsyncThunk(
 
 export const fetchById = createAsyncThunk(
   "campers/fetchById",
-  async ({ id }, thunkAPI) => {
+  async (id, thunkAPI) => {
     try {
-      const data = await fetchCamperByid({ id });
+      const data = await fetchCamperById(id);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

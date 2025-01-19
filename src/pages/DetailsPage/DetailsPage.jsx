@@ -9,7 +9,6 @@ import PhotoList from "../../components/PhotoList/PhotoList.jsx";
 import SuspenseFallback from "../../components/SuspenseFallback/SuspenseFallback.jsx";
 import ReviewsFeaturesNavList from "../../components/ReviewsFeaturesNavList/ReviewsFeaturesNavList.jsx";
 import BookingForm from "../../components/BookingForm/BookingForm.jsx";
-import Loader from "../../components/Loader/Loader.jsx";
 import css from "./DetailsPage.module.css";
 
 export default function DetailsPage() {
@@ -17,15 +16,10 @@ export default function DetailsPage() {
   const { id } = useParams();
 
   useEffect(() => {
-    dispatch(fetchById({ id }));
+    dispatch(fetchById(id));
   }, [dispatch, id]);
 
   const camper = useSelector(selectOneCamper);
-
-  if (!camper) {
-    return <Loader />;
-  }
-
   const isRating = camper.rating > 0;
 
   return (
