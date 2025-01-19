@@ -4,7 +4,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectForm } from "../../redux/selectors.js";
 import { setForm } from "../../redux/filtersSlice.js";
-import Line from "../ui/Line/line.jsx";
+import Line from "../ui/Line/Line.jsx";
 
 export default function VehicleTypesList({ data }) {
   const selectedType = useSelector(selectForm);
