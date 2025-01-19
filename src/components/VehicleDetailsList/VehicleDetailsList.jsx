@@ -1,6 +1,5 @@
-import Line from "../ui/Line/Line.jsx";
 import css from "./VehicleDetailsList.module.css";
-
+import Line from "../ui/Line/Line.jsx";
 export default function VehicleDetailsList({ data }) {
   return (
     <div className={css.wraper}>
