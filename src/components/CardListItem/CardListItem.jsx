@@ -6,7 +6,6 @@ import LocationIcon from "../ui/icons/LocationIcon.jsx";
 import StarRating from "../ui/icons/StarRating.jsx";
 import { selectFavoriteCampers } from "../../redux/selectors.js";
 import { addFavorite, deleteFavorite } from "../../redux/favoriteSlice.js";
-import { fetchById } from "../../redux/operations.js";
 import css from "./CardListItem.module.css";
 
 export default function CardListItem({ data }) {

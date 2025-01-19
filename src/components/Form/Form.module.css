@@ -53,16 +53,3 @@
 .errorInput {
   border: 1px solid var(--button);
 }
-
-/* div.react-datepicker {
-  width: 276px;
-  height: 284px;
-}
-
-.react-datepicker .react-datepicker__header {
-  background-color: var(--white);
-}
-.today {
-  background-color: #007bff; 
-  color: white; 
-} */

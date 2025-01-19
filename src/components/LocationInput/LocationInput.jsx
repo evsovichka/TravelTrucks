@@ -29,6 +29,7 @@ export default function LocationInput() {
           placeholder="City"
           className={css.input}
           onChange={handleChange}
+          value={location || ""}
         ></input>
       </div>
     </div>

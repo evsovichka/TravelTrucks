@@ -26,7 +26,6 @@ export default function DetailsPage() {
   }, [dispatch, id]);
 
   const isRating = camper.rating > 0;
-  console.log(camper);
 
   return isLoading ? (
     <Loader />

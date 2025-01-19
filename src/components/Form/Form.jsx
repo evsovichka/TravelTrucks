@@ -13,7 +13,7 @@ const bookingSchema = Yup.object().shape({
   date: Yup.array()
     .required("Required")
     .min(2, "Select both start and end dates")
-    .of(Yup.date().required("Date is required")),
+    .of(Yup.date().required("Required")),
   comment: Yup.string(),
 });
 
