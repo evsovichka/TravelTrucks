@@ -20,6 +20,8 @@ import {
 } from "../../redux/selectors.js";
 import { setCurrentPage, setRemoveItems } from "../../redux/campersSlice.js";
 import CardList from "../../components/CardList/CardList.jsx";
+import ScrollButton from "../../components/ScrollButton/ScrollButton.jsx";
+import { useState } from "react";
 
 export default function CatalogPage() {
   const dispatch = useDispatch();
@@ -35,12 +37,23 @@ export default function CatalogPage() {
   const equipment = useSelector(selectEquipment);
   const form = useSelector(selectForm);
 
+  const [isVisible, setIsVisible] = useState(false);
+
   const favoriteItems = campersItems.filter((item) =>
     favorites.includes(item.id)
   );
   const nonFavoriteItems = campersItems.filter(
     (item) => !favorites.includes(item.id)
   );
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition > 500) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
 
   useEffect(() => {
     if (!hasFetched.current && campersItems.length === 0) {
@@ -54,6 +67,13 @@ export default function CatalogPage() {
       hasFetched.current = true;
     }
   }, [dispatch, currentPage, limit]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleLoadMoreClick = () => {
     const nextPage = currentPage + 1;
@@ -90,8 +110,17 @@ export default function CatalogPage() {
     );
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className={css.section}>
+      {isVisible && <ScrollButton onClick={scrollToTop} />}
+
       <div className={css.leftBox}>
         <LocationInput />
         <p className={css.text}>Filters</p>
