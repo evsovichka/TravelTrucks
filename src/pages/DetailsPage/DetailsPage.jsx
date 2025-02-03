@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { fetchById } from "../../redux/operations.js";
 import { Suspense, useEffect } from "react";
 import {
@@ -13,6 +13,7 @@ import SuspenseFallback from "../../components/SuspenseFallback/SuspenseFallback
 import ReviewsFeaturesNavList from "../../components/ReviewsFeaturesNavList/ReviewsFeaturesNavList.jsx";
 import BookingForm from "../../components/BookingForm/BookingForm.jsx";
 import Loader from "../../components/Loader/Loader.jsx";
+import { HiOutlineArrowSmLeft } from "react-icons/hi";
 import css from "./DetailsPage.module.css";
 
 export default function DetailsPage() {
@@ -33,6 +34,11 @@ export default function DetailsPage() {
     <>
       {camper && Object.keys(camper).length > 0 && (
         <section className={css.section}>
+          <div className={css.link}>
+            <HiOutlineArrowSmLeft size={20} className={css.icon} />
+            <Link to="/catalog">Back to catalog</Link>
+          </div>
+
           <div className={css.top}>
             <div className={css.topInfoBox}>
               <p className={css.title}>{camper.name}</p>

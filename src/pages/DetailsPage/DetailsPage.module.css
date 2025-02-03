@@ -3,8 +3,25 @@
   display: flex;
   flex-direction: column;
   gap: 60px;
+  position: relative;
+}
+.link {
+  position: absolute;
+  top: 17px;
+  left: 40px;
+  display: flex;
+  flex-direction: row;
+  color: var(--button);
+  gap: 3px;
 }
 
+.link:hover .icon {
+  transform: scale(1.4);
+}
+.link:hover {
+  color: var(--button-hover);
+  text-decoration: underline;
+}
 .top {
   display: flex;
   flex-direction: column;

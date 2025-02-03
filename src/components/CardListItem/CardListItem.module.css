@@ -74,3 +74,22 @@
   overflow-wrap: normal;
   word-break: break-word;
 }
+
+.link {
+  padding: 16px 40px;
+  border-radius: 200px;
+  border: none;
+  width: 166px;
+  height: 56px;
+  background: var(--button);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+.link:hover {
+  background-color: var(--button-hover);
+}

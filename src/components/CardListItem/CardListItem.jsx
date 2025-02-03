@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import CategoriesList from "../CategoriesList/CategoriesList.jsx";
-import Button from "../ui/Button/Button.jsx";
 import Heart from "../ui/icons/Heart.jsx";
 import LocationIcon from "../ui/icons/LocationIcon.jsx";
 import StarRating from "../ui/icons/StarRating.jsx";
 import { selectFavoriteCampers } from "../../redux/selectors.js";
 import { addFavorite, deleteFavorite } from "../../redux/favoriteSlice.js";
+import { Link } from "react-router-dom";
 import css from "./CardListItem.module.css";
 
 export default function CardListItem({ data }) {
@@ -13,10 +13,6 @@ export default function CardListItem({ data }) {
   const favoriteItems = useSelector(selectFavoriteCampers);
   const isFavorite = favoriteItems.includes(data.id);
   const isRating = data.rating > 0;
-
-  const handleShowMoreClick = () => {
-    window.open(`/catalog/${data.id}`, "_blank");
-  };
 
   const handleFavoriteClick = () => {
     if (isFavorite) {
@@ -56,9 +52,9 @@ export default function CardListItem({ data }) {
         </div>
         <p className={css.description}> {data.description}</p>
         <CategoriesList item={data} limit={4} />
-        <Button onClick={handleShowMoreClick} style="show">
+        <Link to={`/catalog/${data.id}`} className={css.link}>
           Show More
-        </Button>
+        </Link>
       </div>
     </div>
   );
