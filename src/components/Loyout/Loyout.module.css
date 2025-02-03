@@ -4,8 +4,5 @@
   position: fixed;
   height: 100vh;
   overflow-y: auto;
-}
-
-.withAppBar {
-  padding-top: 73px;
+  padding-top: 72px;
 }

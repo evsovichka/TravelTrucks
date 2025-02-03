@@ -106,9 +106,11 @@ export default function CatalogPage() {
           <p className={css.title}> No proposition yet</p>
         )}
         {campersItems.length > 0 && totalPages > currentPage && (
-          <Button style="loadMore" onClick={handleLoadMoreClick}>
-            Load More
-          </Button>
+          <div className={css.btn}>
+            <Button style="loadMore" onClick={handleLoadMoreClick}>
+              Load More
+            </Button>
+          </div>
         )}
       </div>
     </section>

@@ -5,7 +5,6 @@ import Reviews from "./Reviews/Reviews.jsx";
 import Layout from "./Loyout/Layout.jsx";
 import Features from "../components/Features/Features.jsx";
 import { Toaster } from "react-hot-toast";
-import Loader from "./Loader/Loader.jsx";
 import { useSelector } from "react-redux";
 import { selectIsLoading } from "../redux/selectors.js";
 
@@ -21,8 +20,7 @@ function App() {
 
   return (
     <div>
-      {isLoading && <Loader />}
-      <Layout>
+      <Layout isLoading={isLoading}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<CatalogPage />} />
