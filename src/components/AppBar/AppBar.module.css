@@ -1,7 +1,9 @@
+/* -----------------MOBILE------------------- */
+
 .header {
   background-color: var(--inputs);
   width: 100%;
-  padding: 24px 0 24px 64px;
+  padding: 20px 0 20px 15px;
   border-bottom: 1px solid var(--badges);
   position: fixed;
   top: 0;
@@ -13,5 +15,22 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  max-width: 50%;
+  padding-right: 15px;
+}
+
+/* -----------------TABLET------------------- */
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 24px 0 24px 64px;
+  }
+  .wrapper {
+    padding-right: 40px;
+  }
+}
+
+/* -----------------DESKTOP------------------- */
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    max-width: 50%;
+  }
 }
