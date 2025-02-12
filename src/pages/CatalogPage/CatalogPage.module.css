@@ -1,8 +1,9 @@
+/* -----------------MOBILE------------------- */
 .section {
-  padding: 48px 64px;
   display: flex;
-  flex-direction: row;
-  gap: 64px;
+  padding: 20px;
+  flex-direction: column;
+  gap: 30px;
   height: 100%;
 }
 
@@ -16,12 +17,11 @@
 .leftBox {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  max-width: 360px;
+  gap: 28px;
 }
 
 .rightBox {
-  width: 888px;
+  /* width: 888px; */
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -38,4 +38,34 @@
 
 .btn {
   padding-bottom: 52px;
+}
+
+/* -----------------TABLET------------------- */
+@media screen and (min-width: 768px) {
+  .section {
+    padding: 48px 64px;
+  }
+  .leftBox {
+    max-width: 610px;
+  }
+}
+
+/* -----------------DESKTOP------------------- */
+@media screen and (min-width: 1024px) {
+  .section {
+    padding: 42px 46px;
+    flex-direction: row;
+    gap: 34px;
+  }
+  .leftBox {
+    max-width: 360px;
+    gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .section {
+    padding: 48px 64px;
+    gap: 64px;
+  }
 }

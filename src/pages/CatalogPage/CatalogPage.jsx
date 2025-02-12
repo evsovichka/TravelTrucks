@@ -22,6 +22,7 @@ import { setCurrentPage, setRemoveItems } from "../../redux/campersSlice.js";
 import CardList from "../../components/CardList/CardList.jsx";
 import ScrollButton from "../../components/ScrollButton/ScrollButton.jsx";
 import { useState } from "react";
+import { useResizeWindow } from "../../utils/resizeWindow.js";
 
 export default function CatalogPage() {
   const dispatch = useDispatch();
@@ -45,6 +46,10 @@ export default function CatalogPage() {
   const nonFavoriteItems = campersItems.filter(
     (item) => !favorites.includes(item.id)
   );
+
+  const sizeWindow = useResizeWindow();
+  const isMobile = sizeWindow < 768;
+  const size = isMobile ? 24 : 32;
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
@@ -124,8 +129,8 @@ export default function CatalogPage() {
       <div className={css.leftBox}>
         <LocationInput />
         <p className={css.text}>Filters</p>
-        <EquipmentsList data={equipmentList} />
-        <VehicleTypesList data={VehicleTypes} />
+        <EquipmentsList data={equipmentList} size={size} />
+        <VehicleTypesList data={VehicleTypes} size={size} />
         <Button onClick={handleSearchClick}>Search</Button>
       </div>
       <div className={css.rightBox}>

@@ -1,8 +1,8 @@
+/* -----------------MOBILE------------------- */
 .box {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  max-width: 360px;
   padding-bottom: 8px;
 }
 
@@ -17,7 +17,6 @@
 .input {
   border-radius: 12px;
   padding: 18px 18px 18px 46px;
-  width: 360px;
   height: 56px;
   background: var(--inputs);
   border: none;
@@ -46,4 +45,11 @@
 }
 .input:focus .icon {
   fill: var(--main);
+}
+
+/* -----------------TABLET------------------- */
+@media screen and (min-width: 768px) {
+  .input {
+    width: 360px;
+  }
 }

@@ -7,7 +7,7 @@ import { toggleFeature } from "../../redux/filtersSlice.js";
 import Line from "../ui/Line/Line.jsx";
 import css from "./EquipmentsList.module.css";
 
-export default function EquipmentsList({ data }) {
+export default function EquipmentsList({ data, size }) {
   const isSelect = useSelector(selectEquipment);
   const dispath = useDispatch();
   const handleClick = (equipment) => {
@@ -28,7 +28,7 @@ export default function EquipmentsList({ data }) {
                 [css.isActive]: isSelect[item.value],
               })}
             >
-              <div>{React.cloneElement(item.icon)}</div>
+              <div>{React.cloneElement(item.icon, { size })}</div>
               <p> {item.label}</p>
             </li>
           );

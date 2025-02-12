@@ -6,7 +6,7 @@ import { selectForm } from "../../redux/selectors.js";
 import { setForm } from "../../redux/filtersSlice.js";
 import Line from "../ui/Line/Line.jsx";
 
-export default function VehicleTypesList({ data }) {
+export default function VehicleTypesList({ data, size }) {
   const selectedType = useSelector(selectForm);
   const dispatch = useDispatch();
   const handleChange = (value) => {
@@ -36,7 +36,7 @@ export default function VehicleTypesList({ data }) {
                   onChange={() => handleChange(item.value)}
                   className={css.input}
                 />
-                <div>{React.cloneElement(item.icon)}</div>
+                <div>{React.cloneElement(item.icon, { size })}</div>
                 <p className={css.label}>{item.label}</p>
               </label>
             </li>
