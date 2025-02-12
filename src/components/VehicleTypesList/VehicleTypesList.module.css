@@ -51,11 +51,6 @@
 
 /* -----------------TABLET------------------- */
 @media screen and (min-width: 768px) {
-  .wrap {
-    /* gap: 24px; */
-    /* max-width: 360px; */
-    /* padding-bottom: 8px; */
-  }
   .title {
     font-size: 20px;
   }
@@ -76,17 +71,5 @@
     gap: 24px;
     max-width: 360px;
     padding-bottom: 8px;
-  }
-  .title {
-    font-size: 20px;
-  }
-
-  .list {
-    column-gap: 12px;
-  }
-  .item {
-    padding: 16px 18px;
-    width: 112px;
-    height: 96px;
   }
 }

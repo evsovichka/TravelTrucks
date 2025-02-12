@@ -21,7 +21,6 @@
 }
 
 .rightBox {
-  /* width: 888px; */
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -46,7 +45,7 @@
     padding: 48px 64px;
   }
   .leftBox {
-    max-width: 610px;
+    max-width: 490px;
   }
 }
 
@@ -67,5 +66,9 @@
   .section {
     padding: 48px 64px;
     gap: 64px;
+  }
+
+  .rightBox {
+    width: 888px;
   }
 }
