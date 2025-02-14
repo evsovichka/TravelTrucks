@@ -21,6 +21,7 @@ import ScrollButton from "../../components/ScrollButton/ScrollButton.jsx";
 import { useState } from "react";
 import { useResizeWindow } from "../../utils/resizeWindow.js";
 import SideBar from "../../components/SideBar/SideBar.jsx";
+import { MdFilterListAlt } from "react-icons/md";
 
 export default function CatalogPage() {
   const dispatch = useDispatch();
@@ -36,7 +37,8 @@ export default function CatalogPage() {
   const equipment = useSelector(selectEquipment);
   const form = useSelector(selectForm);
 
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisibleScrollBtn, setIsVisibleScrollBtn] = useState(false);
+  const [isVisibleSideBar, setIsVisibleSideBar] = useState(false);
 
   const favoriteItems = campersItems.filter((item) =>
     favorites.includes(item.id)
@@ -52,9 +54,9 @@ export default function CatalogPage() {
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
     if (scrollPosition > 500) {
-      setIsVisible(true);
+      setIsVisibleScrollBtn(true);
     } else {
-      setIsVisible(false);
+      setIsVisibleScrollBtn(false);
     }
   };
 
@@ -120,15 +122,41 @@ export default function CatalogPage() {
     });
   };
 
+  const handleOpenScrollBar = () => {
+    setIsVisibleSideBar((prevState) => !prevState);
+  };
   return (
     <section className={css.section}>
-      {isVisible && <ScrollButton onClick={scrollToTop} />}
-      <SideBar
-        equipmentData={equipmentList}
-        size={size}
-        vehicleData={VehicleTypes}
-        onClick={handleSearchClick}
-      />
+      {isVisibleScrollBtn && <ScrollButton onClick={scrollToTop} />}
+
+      {isMobile ? (
+        <>
+          <button
+            onClick={handleOpenScrollBar}
+            aria-expanded={isVisibleSideBar}
+            className={css.filterBtn}
+          >
+            <MdFilterListAlt />
+            Filters
+          </button>
+          {isVisibleSideBar && (
+            <SideBar
+              equipmentData={equipmentList}
+              size={size}
+              vehicleData={VehicleTypes}
+              onClick={handleSearchClick}
+            />
+          )}
+        </>
+      ) : (
+        <SideBar
+          equipmentData={equipmentList}
+          size={size}
+          vehicleData={VehicleTypes}
+          onClick={handleSearchClick}
+        />
+      )}
+
       <div className={css.listBox}>
         {campersItems.length > 0 ? (
           <CardList data={[...favoriteItems, ...nonFavoriteItems]} />
