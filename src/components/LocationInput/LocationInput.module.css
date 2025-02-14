@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-bottom: 8px;
+  font-size: 14px;
 }
 
 .label {
@@ -16,17 +16,14 @@
 }
 .input {
   border-radius: 12px;
-  padding: 18px 18px 18px 46px;
-  height: 56px;
+  padding: 12px 12px 12px 46px;
   background: var(--inputs);
   border: none;
   color: var(--main);
-  font-size: 16px;
   line-height: 150%;
 }
 
 .input::placeholder {
-  font-size: 16px;
   line-height: 150%;
   color: var(--gray);
 }
@@ -37,7 +34,6 @@
   top: 50%;
   left: 18px;
   transform: translateY(-50%);
-  padding-right: 8px;
 }
 
 .icon svg {
@@ -49,7 +45,13 @@
 
 /* -----------------TABLET------------------- */
 @media screen and (min-width: 768px) {
+  .box {
+    padding-bottom: 8px;
+  }
+
   .input {
     width: 360px;
+    padding: 18px 18px 18px 46px;
+    height: 56px;
   }
 }
