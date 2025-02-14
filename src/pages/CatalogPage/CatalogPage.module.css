@@ -36,8 +36,8 @@
   cursor: pointer;
   width: 80px;
   margin-left: auto;
-  margin-bottom: 10px;
-  font-size: 14px;
+  /* margin-bottom: 10px; */
+  font-size: 12px;
 }
 
 .filterBtn:hover {

@@ -11,7 +11,9 @@ export default function SideBar({ equipmentData, size, vehicleData, onClick }) {
       <p className={css.text}>Filters</p>
       <EquipmentsList data={equipmentData} size={size} />
       <VehicleTypesList data={vehicleData} size={size} />
-      <Button onClick={onClick}>Search</Button>
+      <div className={css.btn}>
+        <Button onClick={onClick}>Search</Button>
+      </div>
     </div>
   );
 }

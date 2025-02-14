@@ -29,7 +29,7 @@ export default function EquipmentsList({ data, size }) {
               })}
             >
               <div>{React.cloneElement(item.icon, { size })}</div>
-              <p> {item.label}</p>
+              <p className={css.label}> {item.label}</p>
             </li>
           );
         })}

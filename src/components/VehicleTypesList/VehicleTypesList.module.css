@@ -2,11 +2,12 @@
 .wrap {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 7px;
+  font-size: 12px;
 }
 .title {
   font-weight: 600;
-  font-size: 18px;
+  /* font-size: 18px; */
   line-height: 1.2;
   color: var(--main);
 }
@@ -14,22 +15,26 @@
 .list {
   display: flex;
   flex-direction: row;
-  column-gap: 8px;
+  column-gap: 4px;
   flex-wrap: wrap;
 }
 .item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   justify-content: center;
   align-items: center;
   border: 1px solid var(--gray-light);
   border-radius: 12px;
-  padding: 8px 8px;
-  width: 86px;
-  height: 77px;
+  padding: 4px;
+  width: 54px;
+  height: 50px;
   mix-blend-mode: multiply;
   cursor: pointer;
+  font-size: 10px;
+}
+.list li:nth-child(2) .item {
+  font-size: 9px;
 }
 
 .input {
@@ -38,7 +43,7 @@
 
 .label {
   font-weight: 500;
-  font-size: 16px;
+
   line-height: 150%;
   letter-spacing: -0.01em;
   text-align: center;
