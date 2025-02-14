@@ -14,13 +14,7 @@
   color: var(--text);
 }
 
-.leftBox {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.rightBox {
+.listBox {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -44,9 +38,6 @@
   .section {
     padding: 48px 64px;
   }
-  .leftBox {
-    max-width: 490px;
-  }
 }
 
 /* -----------------DESKTOP------------------- */
@@ -56,10 +47,6 @@
     flex-direction: row;
     gap: 34px;
   }
-  .leftBox {
-    max-width: 360px;
-    gap: 32px;
-  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -68,7 +55,8 @@
     gap: 64px;
   }
 
-  .rightBox {
-    width: 888px;
+  .listBox {
+    /* width: 888px; */
+    width: 100%;
   }
 }

@@ -3,9 +3,6 @@ import css from "./CatalogPage.module.css";
 import { fetchCampers } from "../../redux/operations.js";
 import { useEffect, useRef } from "react";
 import { equipmentList } from "../../data/equipment.jsx";
-import LocationInput from "../../components/LocationInput/LocationInput.jsx";
-import EquipmentsList from "../../components/EquipmentsList/EquipmentsList.jsx";
-import VehicleTypesList from "../../components/VehicleTypesList/VehicleTypesList.jsx";
 import { VehicleTypes } from "../../data/vehicleTypes.jsx";
 import Button from "../../components/ui/Button/Button.jsx";
 import {
@@ -23,6 +20,7 @@ import CardList from "../../components/CardList/CardList.jsx";
 import ScrollButton from "../../components/ScrollButton/ScrollButton.jsx";
 import { useState } from "react";
 import { useResizeWindow } from "../../utils/resizeWindow.js";
+import SideBar from "../../components/SideBar/SideBar.jsx";
 
 export default function CatalogPage() {
   const dispatch = useDispatch();
@@ -125,15 +123,13 @@ export default function CatalogPage() {
   return (
     <section className={css.section}>
       {isVisible && <ScrollButton onClick={scrollToTop} />}
-
-      <div className={css.leftBox}>
-        <LocationInput />
-        <p className={css.text}>Filters</p>
-        <EquipmentsList data={equipmentList} size={size} />
-        <VehicleTypesList data={VehicleTypes} size={size} />
-        <Button onClick={handleSearchClick}>Search</Button>
-      </div>
-      <div className={css.rightBox}>
+      <SideBar
+        equipmentData={equipmentList}
+        size={size}
+        vehicleData={VehicleTypes}
+        onClick={handleSearchClick}
+      />
+      <div className={css.listBox}>
         {campersItems.length > 0 ? (
           <CardList data={[...favoriteItems, ...nonFavoriteItems]} />
         ) : (

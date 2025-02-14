@@ -1,0 +1,20 @@
+.sideBarBox {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* -----------------TABLET------------------- */
+@media screen and (min-width: 768px) {
+  .sideBarBox {
+    max-width: 490px;
+  }
+}
+
+/* -----------------DESKTOP------------------- */
+@media screen and (min-width: 1024px) {
+  .sideBarBox {
+    max-width: 360px;
+    gap: 32px;
+  }
+}
