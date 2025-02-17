@@ -39,8 +39,9 @@
   background: var(--white);
 }
 
-/* .view {
-} */
+.view {
+  width: 100px;
+}
 
 /* -----------------TABLET------------------- */
 @media screen and (min-width: 768px) {

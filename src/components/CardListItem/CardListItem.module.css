@@ -1,22 +1,16 @@
 /* -----------------MOBILE------------------- */
 .wrap {
   display: flex;
-  /* flex-direction: row; */
   flex-direction: column;
-  /* gap: 24px; */
   gap: 7px;
-  /* justify-content: center; */
   align-items: center;
 }
 
 .photo {
   border-radius: 10px;
-  /* width: 292px;
-  height: 320px; */
   width: 250px;
   height: 180px;
   object-fit: cover;
-  /* object-position: 80% center; */
   background-color: var(--gray-light);
 }
 
@@ -26,9 +20,8 @@
   gap: 8px;
   font-size: 12px;
   width: 250px;
-  /* gap: 24px; */
 }
-.topWrap {
+.topInfoWrap {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -37,17 +30,14 @@
   display: flex;
   flex-direction: row;
   font-size: 14px;
-  /* width: 524px; */
   width: 100%;
   align-items: center;
   justify-content: space-between;
 }
 .title {
   font-weight: 600;
-  /* font-size: 24px; */
   line-height: 133%;
   color: var(--main);
-  /* max-width: 339px; */
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -56,11 +46,10 @@
 .priceBox {
   display: flex;
   flex-direction: row;
-  /* gap: 13px; */
   gap: 5px;
 }
 
-.ratingLocationBoxes {
+.ratingLocationBox {
   display: flex;
   flex-direction: row;
   gap: 4px;
@@ -70,7 +59,6 @@
 .ratingLocationWrapper {
   display: flex;
   flex-direction: row;
-  /* gap: 16px; */
   justify-content: space-between;
 }
 
@@ -78,8 +66,6 @@
   text-decoration: underline;
 }
 .description {
-  /* width: 525px; */
-  /* padding-right: 20px; */
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -90,17 +76,13 @@
 }
 
 .link {
-  /* padding: 16px 40px; */
   border-radius: 200px;
   border: none;
   padding: 8px 10px;
   width: 85px;
-  /* width: 166px; */
-  /* height: 56px; */
   background: var(--button);
   cursor: pointer;
   font-weight: 500;
-  /* font-size: 16px; */
   line-height: 150%;
   letter-spacing: -0.01em;
   color: var(--white);
@@ -117,4 +99,44 @@
 
 /* -----------------DESKTOP------------------- */
 @media screen and (min-width: 1440px) {
+  .wrap {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .photo {
+    width: 292px;
+    height: 320px;
+    object-position: 80% center;
+  }
+
+  .infoBox {
+    gap: 24px;
+  }
+
+  .titlePriceWrap {
+    width: 524px;
+  }
+  .title {
+    font-size: 24px;
+    max-width: 339px;
+  }
+
+  .priceBox {
+    gap: 13px;
+  }
+  .ratingLocationWrapper {
+    gap: 16px;
+  }
+  .description {
+    width: 525px;
+    padding-right: 20px;
+  }
+
+  .link {
+    padding: 16px 40px;
+    width: 166px;
+    height: 56px;
+    font-size: 16px;
+  }
 }

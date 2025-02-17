@@ -29,7 +29,7 @@ export default function CardListItem({ data, size }) {
         alt={data.name}
       />
       <div className={css.infoBox}>
-        <div className={css.topWrap}>
+        <div className={css.topInfoWrap}>
           <div className={css.titlePriceWrap}>
             <p className={css.title}>{data.name}</p>
             <div className={css.priceBox}>
@@ -42,13 +42,13 @@ export default function CardListItem({ data, size }) {
             </div>
           </div>
           <div className={css.ratingLocationWrapper}>
-            <div className={css.ratingLocationBoxes}>
+            <div className={css.ratingLocationBox}>
               <StarRating isRating={isRating} />
               <p className={css.rating}>
                 {data.rating}({data.reviews.length} Reviews)
               </p>
             </div>
-            <div className={css.ratingLocationBoxes}>
+            <div className={css.ratingLocationBox}>
               <LocationIcon size={size} />
               {data.location.replace(/(.+), (.+)/, "$2, $1")}
             </div>
