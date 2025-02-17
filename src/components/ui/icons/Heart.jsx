@@ -1,8 +1,8 @@
-export default function Heart({ isFavorite, onClick }) {
+export default function Heart({ isFavorite, onClick, size }) {
   return (
     <svg
-      width="26"
-      height="24"
+      width={size}
+      height={size}
       viewBox="0 0 24 21"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

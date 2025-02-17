@@ -8,7 +8,7 @@ import { addFavorite, deleteFavorite } from "../../redux/favoriteSlice.js";
 import { Link } from "react-router-dom";
 import css from "./CardListItem.module.css";
 
-export default function CardListItem({ data }) {
+export default function CardListItem({ data, size }) {
   const dispatch = useDispatch();
   const favoriteItems = useSelector(selectFavoriteCampers);
   const isFavorite = favoriteItems.includes(data.id);
@@ -34,7 +34,11 @@ export default function CardListItem({ data }) {
             <p className={css.title}>{data.name}</p>
             <div className={css.priceBox}>
               <p className={css.title}>€{data.price}</p>
-              <Heart isFavorite={isFavorite} onClick={handleFavoriteClick} />
+              <Heart
+                isFavorite={isFavorite}
+                onClick={handleFavoriteClick}
+                size={size}
+              />
             </div>
           </div>
           <div className={css.ratingLocationWrapper}>
@@ -45,13 +49,13 @@ export default function CardListItem({ data }) {
               </p>
             </div>
             <div className={css.ratingLocationBoxes}>
-              <LocationIcon size={16} />
+              <LocationIcon size={size} />
               {data.location.replace(/(.+), (.+)/, "$2, $1")}
             </div>
           </div>
         </div>
         <p className={css.description}> {data.description}</p>
-        <CategoriesList item={data} limit={4} />
+        <CategoriesList item={data} limit={4} size={size} />
         <Link to={`/catalog/${data.id}`} className={css.link}>
           Show More
         </Link>

@@ -1,21 +1,37 @@
+/* -----------------MOBILE------------------- */
 .list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 8px;
-}
-.categoriesListBox {
+  gap: 4px;
   width: 100%;
 }
+
 .item {
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
   border-radius: 100px;
-  padding: 12px 18px;
-  height: 48px;
+  padding: 8px 10px;
   background: var(--badges);
   mix-blend-mode: multiply;
   line-height: 150%;
   text-align: center;
+}
+
+/* -----------------TABLET------------------- */
+@media screen and (min-width: 768px) {
+}
+
+/* -----------------DESKTOP------------------- */
+@media screen and (min-width: 1440px) {
+  .list {
+    gap: 8px;
+  }
+  .item {
+    padding: 12px 18px;
+    height: 48px;
+  }
 }

@@ -29,9 +29,8 @@
   border: 1px solid var(--gray-light);
   background: var(--white);
   border-radius: 200px;
-  padding: 16px 30px;
-  width: 145px;
-  height: 56px;
+  padding: 8px 10px;
+  width: 100px;
   color: var(--main);
 }
 
@@ -54,5 +53,13 @@
   .view {
     width: 173px;
     padding: 16px 48px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .loadMore {
+    padding: 16px 30px;
+    width: 145px;
+    height: 56px;
   }
 }

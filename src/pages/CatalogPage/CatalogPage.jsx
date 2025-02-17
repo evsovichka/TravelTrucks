@@ -127,7 +127,7 @@ export default function CatalogPage() {
   };
   return (
     <section className={css.section}>
-      {isVisibleScrollBtn && <ScrollButton onClick={scrollToTop} />}
+      {isVisibleScrollBtn && <ScrollButton onClick={scrollToTop} size={size} />}
 
       {isMobile ? (
         <>
@@ -159,7 +159,10 @@ export default function CatalogPage() {
 
       <div className={css.listBox}>
         {campersItems.length > 0 ? (
-          <CardList data={[...favoriteItems, ...nonFavoriteItems]} />
+          <CardList
+            data={[...favoriteItems, ...nonFavoriteItems]}
+            size={size}
+          />
         ) : (
           <p className={css.title}> No proposition yet</p>
         )}
