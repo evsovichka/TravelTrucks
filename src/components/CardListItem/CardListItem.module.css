@@ -29,6 +29,7 @@
 .titlePriceWrap {
   display: flex;
   flex-direction: row;
+  gap: 10px;
   font-size: 14px;
   width: 100%;
   align-items: center;

@@ -1,17 +1,25 @@
+/* -----------------MOBILE------------------- */
 .section {
-  padding: 48px 64px 80px 64px;
+  /* padding: 48px 64px 80px 64px; */
+  padding: 25px 15px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  /* gap: 60px; */
+  gap: 15px;
   position: relative;
+  font-size: 12px;
 }
 .link {
   position: absolute;
-  top: 17px;
-  left: 40px;
+  font-size: 11px;
+  top: 3px;
+  left: 3px;
+  /* top: 17px;
+  left: 40px; */
   display: flex;
   flex-direction: row;
   color: var(--button);
+  align-items: center;
   gap: 3px;
 }
 
@@ -25,14 +33,19 @@
 .top {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 10px;
+  /* gap: 28px; */
 }
 .topInfoBox {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 .title {
   font-weight: 600;
-  font-size: 24px;
+  /* font-size: 24px; */
+  font-size: 16px;
   line-height: 133%;
 }
 
@@ -40,7 +53,7 @@
   display: flex;
   flex-direction: row;
   gap: 16px;
-  padding-bottom: 8px;
+  /* padding-bottom: 8px; */
 }
 
 .ratingLocationBoxes {
@@ -69,4 +82,11 @@
   display: flex;
   flex-direction: row;
   gap: 40px;
+}
+/* -----------------TABLET------------------- */
+@media screen and (min-width: 768px) {
+}
+
+/* -----------------DESKTOP------------------- */
+@media screen and (min-width: 1440px) {
 }

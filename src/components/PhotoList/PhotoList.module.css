@@ -1,19 +1,42 @@
+/* -----------------MOBILE------------------- */
 .list {
   display: flex;
   flex-direction: row;
-  gap: 48px;
+  flex-wrap: wrap;
+  /* gap: 48px; */
+  gap: 4px;
   width: 100%;
 }
 
 .item {
   border-radius: 10px;
-  width: 292px;
-  height: 312px;
+  /* width: 292px;
+  height: 312px; */
+  width: 220px;
+  height: 200px;
   background-color: var(--gray-light);
 }
 .img {
   border-radius: 10px;
-  width: 292px;
-  height: 312px;
+  /* width: 292px;
+  height: 312px; */
+  width: 220px;
+  height: 200px;
   object-fit: cover;
+}
+
+/* -----------------TABLET------------------- */
+@media screen and (min-width: 768px) {
+}
+
+/* -----------------DESKTOP------------------- */
+@media screen and (min-width: 1440px) {
+  .item {
+    width: 292px;
+    height: 312px;
+  }
+  .img {
+    width: 292px;
+    height: 312px;
+  }
 }

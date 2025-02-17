@@ -14,6 +14,7 @@ import ReviewsFeaturesNavList from "../../components/ReviewsFeaturesNavList/Revi
 import BookingForm from "../../components/BookingForm/BookingForm.jsx";
 import Loader from "../../components/Loader/Loader.jsx";
 import { HiOutlineArrowSmLeft } from "react-icons/hi";
+import { useResizeWindow } from "../../utils/resizeWindow.js";
 import css from "./DetailsPage.module.css";
 
 export default function DetailsPage() {
@@ -28,6 +29,10 @@ export default function DetailsPage() {
 
   const isRating = camper.rating > 0;
 
+  const sizeWindow = useResizeWindow();
+  const isMobile = sizeWindow < 768;
+  // const size = isMobile ? 16 : 32;
+
   return isLoading ? (
     <Loader />
   ) : (
@@ -35,7 +40,10 @@ export default function DetailsPage() {
       {camper && Object.keys(camper).length > 0 && (
         <section className={css.section}>
           <div className={css.link}>
-            <HiOutlineArrowSmLeft size={20} className={css.icon} />
+            <HiOutlineArrowSmLeft
+              size={isMobile ? 16 : 20}
+              className={css.icon}
+            />
             <Link to="/catalog">Back to catalog</Link>
           </div>
 
