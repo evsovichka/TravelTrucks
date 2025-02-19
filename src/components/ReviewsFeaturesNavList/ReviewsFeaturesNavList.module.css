@@ -1,3 +1,4 @@
+/* -----------------MOBILE------------------- */
 .wrapper {
   width: 100%;
 }
@@ -5,21 +6,43 @@
 .list {
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 20px;
 }
 
 .link {
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1.2;
-  padding-bottom: 24px;
+  padding-bottom: 8px;
 }
 
 .activeLink {
-  border-bottom: 5px solid var(--button);
+  border-bottom: 2px solid var(--button);
 }
 
 .line {
   position: relative;
-  top: -3px;
+  top: -2px;
   z-index: -2;
+}
+
+/* -----------------TABLET------------------- */
+@media screen and (min-width: 768px) {
+}
+
+/* -----------------DESKTOP------------------- */
+@media screen and (min-width: 1440px) {
+  .list {
+    gap: 40px;
+  }
+  .link {
+    font-size: 20px;
+    padding-bottom: 24px;
+  }
+
+  .activeLink {
+    border-bottom-width: 5px;
+  }
+  .line {
+    top: -3px;
+  }
 }

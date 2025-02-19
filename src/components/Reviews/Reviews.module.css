@@ -1,20 +1,20 @@
+/* -----------------MOBILE------------------- */
 .wrap {
-  width: 631px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 44px;
 }
 .list {
   display: flex;
   flex-direction: column;
-  gap: 44px;
+  gap: 10px;
 }
 .avatarSymbol {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
   border-radius: 60px;
-  width: 60px;
-  height: 60px;
   background: var(--badges);
-  font-size: 24px;
   line-height: 1.33333;
   color: var(--button);
   display: flex;
@@ -25,7 +25,7 @@
   line-height: 1.5;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .topWrap {
@@ -37,9 +37,34 @@
 .item {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 
 .text {
   color: var(--text);
+}
+
+/* -----------------TABLET------------------- */
+@media screen and (min-width: 768px) {
+}
+
+/* -----------------DESKTOP------------------- */
+@media screen and (min-width: 1440px) {
+  .wrap {
+    width: 631px;
+  }
+  .list {
+    gap: 44px;
+  }
+  .avatarSymbol {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+  .nameRatingBox {
+    gap: 4px;
+  }
+  .item {
+    gap: 16px;
+  }
 }

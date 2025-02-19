@@ -1,10 +1,24 @@
+/* -----------------MOBILE------------------- */
 .featuresBox {
   border-radius: 10px;
-  padding: 44px 52px;
-  width: 631px;
-  height: 588px;
+  width: 100%;
+  padding: 15px;
   background: var(--inputs);
   display: flex;
   flex-direction: column;
+  gap: 15px; /*додала відступ якого не було */
   justify-content: space-between;
+}
+
+/* -----------------TABLET------------------- */
+@media screen and (min-width: 768px) {
+}
+
+/* -----------------DESKTOP------------------- */
+@media screen and (min-width: 1440px) {
+  .featuresBox {
+    padding: 44px 52px;
+    width: 631px;
+    height: 588px;
+  }
 }

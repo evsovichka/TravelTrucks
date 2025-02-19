@@ -64,7 +64,7 @@ export default function DetailsPage() {
               </div>
               <p className={css.title}>€{camper.price}</p>
             </div>
-            <PhotoList data={camper.gallery} />
+            {/* <PhotoList data={camper.gallery} /> */}
             <p className={css.description}>{camper.description}</p>
           </div>
           <div className={css.bottom}>
