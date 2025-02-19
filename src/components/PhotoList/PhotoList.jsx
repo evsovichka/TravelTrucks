@@ -1,6 +1,6 @@
 import css from "./PhotoList.module.css";
 
-export default function PhotoList({ data }) {
+export default function PhotoList({ data, onOpen }) {
   return (
     <ul className={css.list}>
       {data.map((photo, index) => {
@@ -10,6 +10,7 @@ export default function PhotoList({ data }) {
               src={photo.original}
               alt="Camper's photo"
               className={css.img}
+              onClick={() => onOpen(photo.original)}
             />
           </li>
         );

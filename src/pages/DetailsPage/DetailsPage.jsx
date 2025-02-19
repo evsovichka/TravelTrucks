@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet, useParams } from "react-router-dom";
 import { fetchById } from "../../redux/operations.js";
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
 import {
   selectCamperById,
   selectCamperByIdLoading,
@@ -16,12 +16,15 @@ import Loader from "../../components/Loader/Loader.jsx";
 import { HiOutlineArrowSmLeft } from "react-icons/hi";
 import { useResizeWindow } from "../../utils/resizeWindow.js";
 import css from "./DetailsPage.module.css";
+import ImageModal from "../../components/ImageModal/ImageModal.jsx";
 
 export default function DetailsPage() {
   const camper = useSelector(selectCamperById);
   const dispatch = useDispatch();
   const { id } = useParams();
   const isLoading = useSelector(selectCamperByIdLoading);
+  const [isModalOpen, setModalIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     dispatch(fetchById(id));
@@ -32,6 +35,17 @@ export default function DetailsPage() {
   const sizeWindow = useResizeWindow();
   const isMobile = sizeWindow < 768;
   // const size = isMobile ? 16 : 32;
+
+  const openModal = (image) => {
+    console.log(selectedImage);
+    setSelectedImage(image);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setSelectedImage(null);
+  };
 
   return isLoading ? (
     <Loader />
@@ -64,7 +78,7 @@ export default function DetailsPage() {
               </div>
               <p className={css.title}>€{camper.price}</p>
             </div>
-            <PhotoList data={camper.gallery} />
+            <PhotoList data={camper.gallery} onOpen={openModal} />
             <p className={css.description}>{camper.description}</p>
           </div>
           <div className={css.bottom}>
@@ -76,6 +90,13 @@ export default function DetailsPage() {
               <BookingForm />
             </div>
           </div>
+          {isModalOpen && (
+            <ImageModal
+              img={selectedImage}
+              onClose={closeModal}
+              name={camper.name}
+            />
+          )}
         </section>
       )}
     </>

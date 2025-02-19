@@ -1,0 +1,11 @@
+.modalContent {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  position: relative;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -12,6 +12,7 @@
   width: 130px;
   height: 130px;
   background-color: var(--gray-light);
+  cursor: pointer;
 }
 .img {
   border-radius: 10px;

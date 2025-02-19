@@ -1,10 +1,8 @@
 /* -----------------MOBILE------------------- */
 .section {
-  /* padding: 48px 64px 80px 64px; */
   padding: 25px 15px;
   display: flex;
   flex-direction: column;
-  /* gap: 60px; */
   gap: 15px;
   position: relative;
   font-size: 12px;
@@ -14,8 +12,6 @@
   font-size: 11px;
   top: 3px;
   left: 3px;
-  /* top: 17px;
-  left: 40px; */
   display: flex;
   flex-direction: row;
   color: var(--button);
@@ -34,7 +30,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* gap: 28px; */
 }
 .topInfoBox {
   width: 100%;
@@ -44,7 +39,6 @@
 }
 .title {
   font-weight: 600;
-  /* font-size: 24px; */
   font-size: 16px;
   line-height: 133%;
 }
@@ -53,7 +47,6 @@
   display: flex;
   flex-direction: row;
   gap: 16px;
-  /* padding-bottom: 8px; */
 }
 
 .ratingLocationBoxes {
@@ -76,14 +69,11 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* gap: 44px; */
 }
 
 .bottombox {
   display: flex;
-  /* flex-direction: row; */
   flex-direction: column;
-  /* gap: 40px; */
   gap: 20px;
 }
 /* -----------------TABLET------------------- */
@@ -92,4 +82,28 @@
 
 /* -----------------DESKTOP------------------- */
 @media screen and (min-width: 1440px) {
+  .section {
+    padding: 48px 64px 80px 64px;
+    gap: 60px;
+  }
+  .link {
+    top: 17px;
+    left: 40px;
+  }
+  .top {
+    gap: 28px;
+  }
+  .title {
+    font-size: 24px;
+  }
+  .ratingLoctionWrapper {
+    padding-bottom: 8px;
+  }
+  .bottom {
+    gap: 44px;
+  }
+  .bottombox {
+    flex-direction: row;
+    gap: 40px;
+  }
 }
