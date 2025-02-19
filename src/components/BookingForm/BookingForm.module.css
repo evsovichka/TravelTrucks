@@ -3,13 +3,10 @@
   border: 1px solid var(--gray-light);
   border-radius: 10px;
   padding: 15px;
-  width: 100%;
-  /* padding: 44px; */
-  /* width: 641px; */
-  /* height: 588px; */
+  width: 290px;
+  gap: 10px;
   display: flex;
   flex-direction: column;
-  /* gap: 24px; */
 }
 
 .textBox {
@@ -20,7 +17,7 @@
 
 .title {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.2;
 }
 
@@ -34,28 +31,32 @@
   justify-content: center;
 }
 .form {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
+}
+.inputContainer {
+  position: relative;
+  width: 258px;
 }
 
 .formInput {
+  padding: 10px;
+  width: 258px;
   border-radius: 12px;
-  padding: 18px;
-  height: 60px;
   background: var(--inputs);
   border: none;
-  width: 527px;
   transition: border 0.3s;
 }
 
 .textarea {
   border-radius: 10px;
-  padding: 18px 308px 76px 18px;
-  height: 118px;
+  width: 100%;
+  padding: 10px;
+  height: 95px;
   background: var(--inputs);
   border: none;
-  width: 527px;
   resize: none;
 }
 
@@ -73,16 +74,12 @@
   justify-content: center;
 }
 
-.inputContainer {
-  position: relative;
-  width: 527px;
-}
 .errorMessage {
   color: var(--button);
   position: absolute;
-  bottom: -11px;
+  bottom: -9px;
   right: 0;
-  font-size: 10px;
+  font-size: 8px;
 }
 
 .errorInput {
@@ -95,4 +92,35 @@
 
 /* -----------------DESKTOP------------------- */
 @media screen and (min-width: 1440px) {
+  .box {
+    padding: 44px;
+    width: 641px;
+    height: 588px;
+    gap: 24px;
+  }
+  .form {
+    gap: 14px;
+  }
+
+  .formInput {
+    padding: 18px;
+    height: 60px;
+    width: 527px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .inputContainer {
+    width: 527px;
+  }
+  .textarea {
+    padding: 18px;
+    height: 118px;
+    width: 527px;
+  }
+
+  .errorMessage {
+    bottom: -11px;
+    font-size: 10px;
+  }
 }

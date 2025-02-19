@@ -84,7 +84,7 @@
   /* flex-direction: row; */
   flex-direction: column;
   /* gap: 40px; */
-  gap: 10px;
+  gap: 20px;
 }
 /* -----------------TABLET------------------- */
 @media screen and (min-width: 768px) {
