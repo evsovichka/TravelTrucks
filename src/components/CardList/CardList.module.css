@@ -3,13 +3,13 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
 .item {
   border: 1px solid var(--gray-light);
   border-radius: 20px;
-  padding: 5px 10px;
+  padding: 10px;
   width: 100%;
   background: var(--white);
   box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.14);
@@ -17,6 +17,10 @@
 
 /* -----------------TABLET------------------- */
 @media screen and (min-width: 768px) {
+  .item {
+    flex-basis: 20%;
+    flex-grow: 1;
+  }
 }
 
 /* -----------------DESKTOP------------------- */
@@ -28,8 +32,6 @@
   }
   .item {
     padding: 24px;
-    flex-basis: 20%;
-    flex-grow: 1;
     height: 368px;
   }
 }

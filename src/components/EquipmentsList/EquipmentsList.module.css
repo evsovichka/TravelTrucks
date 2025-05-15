@@ -47,8 +47,8 @@
   color: var(--main);
 }
 
-/* -----------------TABLET------------------- */
-@media screen and (min-width: 768px) {
+/* -----------------DESKTOP------------------- */
+@media screen and (min-width: 1024px) {
   .title {
     font-size: 20px;
   }
@@ -66,9 +66,11 @@
     font-size: 16px;
     gap: 16px;
   }
+  .label {
+    font-size: 16px;
+  }
 }
 
-/* -----------------DESKTOP------------------- */
 @media screen and (min-width: 1440px) {
   .wrap {
     gap: 24px;

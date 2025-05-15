@@ -6,7 +6,7 @@
   background: var(--inputs);
   display: flex;
   flex-direction: column;
-  gap: 15px; /*додала відступ якого не було */
+  gap: 15px;
   justify-content: space-between;
 }
 

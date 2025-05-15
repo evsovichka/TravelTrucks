@@ -49,7 +49,8 @@ export default function CatalogPage() {
 
   const sizeWindow = useResizeWindow();
   const isMobile = sizeWindow < 768;
-  const size = isMobile ? 16 : 32;
+  const isTablet = sizeWindow >= 768 && sizeWindow < 1024;
+  const size = isMobile || isTablet ? 16 : 32;
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
