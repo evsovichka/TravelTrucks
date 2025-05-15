@@ -20,13 +20,22 @@
 }
 
 /* -----------------DESKTOP------------------- */
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .list {
     gap: 32px;
+    width: 100%;
+    display: flex;
   }
   .item {
     padding: 24px;
-    width: 888px;
+    flex-basis: 20%;
+    flex-grow: 1;
     height: 368px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .item {
+    width: 888px;
   }
 }

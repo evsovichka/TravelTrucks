@@ -50,17 +50,22 @@
   gap: 5px;
 }
 
-.ratingLocationBox {
-  display: flex;
-  flex-direction: row;
-  gap: 4px;
-  line-height: 150%;
+.priceBox svg:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
-
 .ratingLocationWrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.ratingLocationBox {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  line-height: 150%;
 }
 
 .rating {
@@ -99,25 +104,21 @@
 }
 
 /* -----------------DESKTOP------------------- */
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .wrap {
     flex-direction: row;
-    gap: 24px;
+    gap: 16px;
   }
-
   .photo {
-    width: 292px;
+    min-width: 232px;
     height: 320px;
     object-position: 80% center;
   }
-
   .infoBox {
+    flex: 1;
     gap: 24px;
   }
 
-  .titlePriceWrap {
-    width: 524px;
-  }
   .title {
     font-size: 24px;
     max-width: 339px;
@@ -130,14 +131,32 @@
     gap: 16px;
   }
   .description {
-    width: 525px;
     padding-right: 20px;
   }
 
   .link {
+    margin-left: 0;
     padding: 16px 40px;
     width: 166px;
     height: 56px;
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .wrap {
+    gap: 24px;
+  }
+
+  .photo {
+    width: 292px;
+  }
+
+  .titlePriceWrap {
+    width: 524px;
+  }
+
+  .description {
+    width: 525px;
   }
 }

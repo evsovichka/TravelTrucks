@@ -23,11 +23,13 @@ export default function CardListItem({ data, size }) {
   };
   return (
     <div className={css.wrap}>
-      <img
-        className={css.photo}
-        src={data.gallery[0].original}
-        alt={data.name}
-      />
+      <Link to={`/catalog/${data.id}`}>
+        <img
+          className={css.photo}
+          src={data.gallery[0].original}
+          alt={data.name}
+        />
+      </Link>
       <div className={css.infoBox}>
         <div className={css.topInfoWrap}>
           <div className={css.titlePriceWrap}>
@@ -49,7 +51,7 @@ export default function CardListItem({ data, size }) {
               </p>
             </div>
             <div className={css.ratingLocationBox}>
-              <LocationIcon size={size} />
+              <LocationIcon />
               {data.location.replace(/(.+), (.+)/, "$2, $1")}
             </div>
           </div>

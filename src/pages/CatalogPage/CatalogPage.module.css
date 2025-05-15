@@ -3,6 +3,7 @@
   display: flex;
   padding: 10px 15px;
   flex-direction: column;
+  position: relative;
   height: 100%;
   gap: 8px;
 }
@@ -52,8 +53,12 @@
 @media screen and (min-width: 1024px) {
   .section {
     padding: 42px 46px;
+    display: flex;
     flex-direction: row;
     gap: 34px;
+  }
+  .listBox {
+    flex: 1;
   }
 }
 
@@ -64,7 +69,6 @@
   }
 
   .listBox {
-    /* width: 888px; */
     width: 100%;
     gap: 40px;
   }
