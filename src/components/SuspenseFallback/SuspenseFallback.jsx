@@ -1,7 +1,10 @@
 import { ThreeDots } from "react-loader-spinner";
 import css from "./SuspenseFallback.module.css";
+import { useResizeWindow } from "../../utils/resizeWindow";
 
 export default function SuspenseFallback() {
+  const sizeWindow = useResizeWindow();
+  const size = sizeWindow < 768 ? 20 : 40;
   return (
     <div className={css.wraper}>
       <div className={css.box}>
@@ -10,8 +13,8 @@ export default function SuspenseFallback() {
         <div className={css.loader}>
           <ThreeDots
             visible={true}
-            height="50"
-            width="40"
+            height={size + 10}
+            width={size}
             color="#e44848"
             radius="9"
             ariaLabel="three-dots-loading"

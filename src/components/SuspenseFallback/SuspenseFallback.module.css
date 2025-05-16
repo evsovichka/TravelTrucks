@@ -3,12 +3,12 @@
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  height: 50px;
-  width: 160px;
+  height: 30px;
+  width: 90px;
 }
 
 .text {
-  font-size: 32px;
+  font-size: 16px;
   line-height: 1.14;
   color: var(--main);
   margin-bottom: auto;
@@ -25,4 +25,24 @@
   justify-content: center;
   align-items: center;
   height: 80%;
+}
+
+@media screen and (min-width: 768px) {
+  .box {
+    height: 45px;
+    width: 130px;
+  }
+  .text {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .box {
+    height: 50px;
+    width: 150px;
+  }
+  .text {
+    font-size: 28px;
+  }
 }
