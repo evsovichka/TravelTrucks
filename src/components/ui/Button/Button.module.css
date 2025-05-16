@@ -33,16 +33,17 @@
   background: var(--white);
 }
 
-/* .view {
+.view {
   width: 100px;
-} */
+}
 
 /* -----------------TABLET------------------- */
 @media screen and (min-width: 768px) {
-  /* .view {
+  .view {
     width: 173px;
     padding: 16px 48px;
-  } */
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
