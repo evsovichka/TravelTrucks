@@ -26,7 +26,7 @@
 }
 
 /* -----------------DESKTOP------------------- */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
   .list {
     gap: 8px;
   }

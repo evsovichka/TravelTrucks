@@ -31,7 +31,7 @@
 }
 
 /* -----------------DESKTOP------------------- */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
   .sideBarBox {
     min-width: 360px;
     gap: 32px;

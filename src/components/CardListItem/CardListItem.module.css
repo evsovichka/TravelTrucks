@@ -111,46 +111,16 @@
   .link {
     margin-left: 0;
   }
-}
-
-/* -----------------DESKTOP------------------- */
-@media screen and (min-width: 1024px) {
-  .wrap {
-    gap: 16px;
-  }
-  .photo {
-    min-width: 232px;
-    height: 320px;
-  }
   .infoBox {
     flex: 1;
-    gap: 24px;
-    font-size: 16px;
-  }
-
-  .title {
-    font-size: 24px;
-    max-width: 339px;
-  }
-
-  .priceBox {
-    gap: 13px;
   }
   .ratingLocationWrapper {
     gap: 16px;
     justify-content: flex-start;
   }
-  .description {
-    padding-right: 20px;
-  }
-
-  .link {
-    padding: 16px 40px;
-    width: 166px;
-    height: 56px;
-    font-size: 16px;
-  }
 }
+
+/* -----------------DESKTOP------------------- */
 
 @media screen and (min-width: 1440px) {
   .wrap {
@@ -159,13 +129,34 @@
 
   .photo {
     width: 292px;
+    height: 320px;
   }
 
+  .infoBox {
+    flex: 1;
+    gap: 24px;
+    font-size: 16px;
+  }
+  .title {
+    font-size: 24px;
+    max-width: 339px;
+  }
+
+  .priceBox {
+    gap: 13px;
+  }
   .titlePriceWrap {
     width: 524px;
   }
 
   .description {
     width: 525px;
+    padding-right: 20px;
+  }
+  .link {
+    padding: 16px 40px;
+    width: 166px;
+    height: 56px;
+    font-size: 16px;
   }
 }

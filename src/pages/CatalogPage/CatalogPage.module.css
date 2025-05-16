@@ -46,20 +46,12 @@
     flex-direction: row;
     gap: 20px;
   }
-}
-
-/* -----------------DESKTOP------------------- */
-@media screen and (min-width: 1024px) {
-  .section {
-    padding: 42px 46px;
-    display: flex;
-    flex-direction: row;
-    gap: 34px;
-  }
   .listBox {
     flex: 1;
   }
 }
+
+/* -----------------DESKTOP------------------- */
 
 @media screen and (min-width: 1440px) {
   .section {

@@ -54,7 +54,13 @@
 }
 
 /* -----------------DESKTOP------------------- */
-@media screen and (min-width: 1024px) {
+
+@media screen and (min-width: 1440px) {
+  .wrap {
+    gap: 24px;
+    max-width: 360px;
+    padding-bottom: 8px;
+  }
   .title {
     font-size: 20px;
   }
@@ -69,13 +75,5 @@
   }
   .label {
     font-size: 16px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .wrap {
-    gap: 24px;
-    max-width: 360px;
-    padding-bottom: 8px;
   }
 }
