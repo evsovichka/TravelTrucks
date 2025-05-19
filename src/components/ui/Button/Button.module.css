@@ -40,6 +40,13 @@
 /* -----------------TABLET------------------- */
 @media screen and (min-width: 768px) {
   .view {
+    width: 120px;
+  }
+}
+
+/* -----------------DESKTOP------------------- */
+@media screen and (min-width: 1024px) {
+  .view {
     width: 173px;
     padding: 16px 48px;
     font-size: 16px;

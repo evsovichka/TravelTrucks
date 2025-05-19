@@ -46,8 +46,23 @@
 /* -----------------TABLET------------------- */
 @media screen and (min-width: 768px) {
   .wrapper {
-    gap: 40px;
     padding: 0;
+    padding-left: 30px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+  .text {
+    font-size: 18px;
+  }
+}
+
+/* -----------------DESKTOP------------------- */
+
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    gap: 40px;
     padding-left: 64px;
   }
   .textWrapper {
