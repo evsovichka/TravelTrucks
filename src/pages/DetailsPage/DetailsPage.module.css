@@ -16,7 +16,7 @@
   flex-direction: row;
   color: var(--button);
   align-items: center;
-  gap: 3px;
+  gap: 1px;
 }
 
 .link:hover .icon {
@@ -85,10 +85,15 @@
   .section {
     padding: 48px 64px 80px 64px;
     gap: 60px;
+    font-size: 16px;
   }
   .link {
     top: 17px;
-    left: 40px;
+    left: 64px;
+    font-size: 14px;
+  }
+  .topInfoBox {
+    gap: 8px;
   }
   .top {
     gap: 28px;
@@ -99,6 +104,7 @@
   .ratingLoctionWrapper {
     padding-bottom: 8px;
   }
+
   .bottom {
     gap: 44px;
   }

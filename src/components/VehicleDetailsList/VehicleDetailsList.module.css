@@ -9,6 +9,7 @@
 .title {
   font-size: 14px;
   line-height: 1.2;
+  font-weight: 600;
 }
 
 .list {
@@ -17,6 +18,7 @@
   flex-direction: column;
   gap: 8px;
   line-height: 1.5;
+  font-weight: 500;
 }
 
 .item {
@@ -31,10 +33,14 @@
 
 /* -----------------DESKTOP------------------- */
 @media screen and (min-width: 1440px) {
+  .wraper {
+    gap: 24px;
+  }
   .title {
     font-size: 20px;
   }
   .list {
     gap: 16px;
+    font-size: 16px;
   }
 }

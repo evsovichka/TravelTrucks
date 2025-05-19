@@ -1,11 +1,11 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import css from "./BookingForm.module.css";
 import toast from "react-hot-toast";
-import Button from "../ui/Button/Button.jsx";
+// import Button from "../ui/Button/Button.jsx";
 
 const bookingSchema = Yup.object().shape({
   username: Yup.string().min(2, "Short").max(30, "Long").required("Required"),
@@ -28,6 +28,9 @@ const BookingForm = () => {
   const id = useId();
 
   const handleSubmit = (values, actions) => {
+    if (!values) {
+      toast.error("pfgjdyb gjkz");
+    }
     actions.resetForm();
     toast.success("Your booking has been successfully confirmed!");
   };
@@ -41,6 +44,8 @@ const BookingForm = () => {
         </p>
       </div>
       <Formik
+        validateOnChange={false}
+        validateOnBlur={false}
         initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={bookingSchema}
@@ -57,11 +62,11 @@ const BookingForm = () => {
                   errors.username ? css.errorInput : ""
                 }`}
               />
-              <ErrorMessage
+              {/* <ErrorMessage
                 name="username"
                 component="span"
                 className={css.errorMessage}
-              />
+              /> */}
             </div>
             <div className={css.inputContainer}>
               <Field
@@ -73,11 +78,11 @@ const BookingForm = () => {
                   errors.email ? css.errorInput : ""
                 }`}
               />
-              <ErrorMessage
+              {/* <ErrorMessage
                 name="email"
                 component="span"
                 className={css.errorMessage}
-              />
+              /> */}
             </div>
             <div className={css.inputContainer}>
               <DatePicker
@@ -96,9 +101,9 @@ const BookingForm = () => {
                 }`}
                 calendarClassName={css.customCalendar}
               />
-              {errors.date && (
+              {/* {errors.date && (
                 <span className={css.errorMessage}>{errors.date}</span>
-              )}
+              )} */}
             </div>
             <div>
               <Field
@@ -110,7 +115,7 @@ const BookingForm = () => {
               />
             </div>
             <div className={css.button}>
-              <Button>Send</Button>
+              <button type="Submit">Send</button>
             </div>
           </Form>
         )}
