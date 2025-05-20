@@ -42,7 +42,7 @@
 /* -----------------TABLET------------------- */
 @media screen and (min-width: 768px) {
   .section {
-    padding: 48px 64px;
+    padding: 28px 40px;
     flex-direction: row;
     gap: 20px;
   }

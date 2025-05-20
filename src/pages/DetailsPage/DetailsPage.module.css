@@ -11,7 +11,7 @@
   position: absolute;
   font-size: 11px;
   top: 3px;
-  left: 3px;
+  left: 12px;
   display: flex;
   flex-direction: row;
   color: var(--button);
@@ -73,11 +73,29 @@
 
 .bottombox {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 20px;
 }
 /* -----------------TABLET------------------- */
 @media screen and (min-width: 768px) {
+  .section {
+    gap: 25px;
+    padding: 30px 40px;
+  }
+
+  .link {
+    left: 35px;
+  }
+  .bottom {
+    gap: 25px;
+  }
+
+  .bottombox {
+    gap: 15px;
+    flex-wrap: nowrap;
+    /* justify-content: space-around; */
+  }
 }
 
 /* -----------------DESKTOP------------------- */
@@ -109,7 +127,6 @@
     gap: 44px;
   }
   .bottombox {
-    flex-direction: row;
     gap: 40px;
   }
 }

@@ -23,6 +23,18 @@
 
 /* -----------------TABLET------------------- */
 @media screen and (min-width: 768px) {
+  .list {
+    gap: 10px;
+  }
+
+  .item {
+    width: 160px;
+    height: 170px;
+  }
+  .img {
+    width: 160px;
+    height: 170px;
+  }
 }
 
 /* -----------------DESKTOP------------------- */

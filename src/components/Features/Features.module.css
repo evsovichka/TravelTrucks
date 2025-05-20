@@ -1,24 +1,29 @@
 /* -----------------MOBILE------------------- */
 .featuresBox {
   border-radius: 10px;
-  width: 100%;
-  padding: 15px;
+  max-width: 370px;
+  padding: 20px 15px;
   background: var(--inputs);
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px;
   justify-content: space-between;
 }
 
 /* -----------------TABLET------------------- */
 @media screen and (min-width: 768px) {
+  .featuresBox {
+    width: 100%;
+    max-width: 570px;
+    height: 352px;
+  }
 }
 
 /* -----------------DESKTOP------------------- */
 @media screen and (min-width: 1440px) {
   .featuresBox {
     padding: 44px 52px;
-    width: 631px;
+    max-width: 631px;
     height: 588px;
   }
 }
