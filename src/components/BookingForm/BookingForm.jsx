@@ -5,7 +5,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import css from "./BookingForm.module.css";
 import toast from "react-hot-toast";
-// import Button from "../ui/Button/Button.jsx";
 
 const bookingSchema = Yup.object().shape({
   username: Yup.string().min(2, "Short").max(30, "Long").required("Required"),
@@ -28,9 +27,6 @@ const BookingForm = () => {
   const id = useId();
 
   const handleSubmit = (values, actions) => {
-    if (!values) {
-      toast.error("pfgjdyb gjkz");
-    }
     actions.resetForm();
     toast.success("Your booking has been successfully confirmed!");
   };

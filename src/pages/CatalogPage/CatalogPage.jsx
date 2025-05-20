@@ -11,6 +11,7 @@ import {
   selectEquipment,
   selectFavoriteCampers,
   selectForm,
+  selectIsLoading,
   selectLimit,
   selectLocation,
   selectTotalItems,
@@ -32,6 +33,7 @@ export default function CatalogPage() {
   const totalItems = useSelector(selectTotalItems);
   const totalPages = totalItems / limit;
   const favorites = useSelector(selectFavoriteCampers);
+  const isLoading = useSelector(selectIsLoading);
 
   const location = useSelector(selectLocation);
   const equipment = useSelector(selectEquipment);
@@ -159,14 +161,14 @@ export default function CatalogPage() {
       )}
 
       <div className={css.listBox}>
-        {campersItems.length > 0 ? (
+        {isLoading === false && campersItems.length < 0 ? (
+          <p className={css.title}> No proposition yet</p>
+        ) : campersItems.length > 0 ? (
           <CardList
             data={[...favoriteItems, ...nonFavoriteItems]}
             size={size}
           />
-        ) : (
-          <p className={css.title}> No proposition yet</p>
-        )}
+        ) : null}
         {campersItems.length > 0 && totalPages > currentPage && (
           <div className={css.btn}>
             <Button style="loadMore" onClick={handleLoadMoreClick}>

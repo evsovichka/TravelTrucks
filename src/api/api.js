@@ -11,7 +11,7 @@ export const fetchAllCampers = async ({ currentPage, limit, filters }) => {
     ...(location && { location }),
     ...(form && { form }),
     ...Object.fromEntries(
-      Object.entries(equipment).filter(([key, value]) => value)
+      Object.entries(equipment).filter(([, value]) => value)
     ),
   };
   const response = await axios.get("/", { params });

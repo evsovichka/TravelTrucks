@@ -16,16 +16,12 @@ import Loader from "../../components/Loader/Loader.jsx";
 import { HiOutlineArrowSmLeft } from "react-icons/hi";
 import { useResizeWindow } from "../../utils/resizeWindow.js";
 import css from "./DetailsPage.module.css";
-// import ImageModal from "../../components/ImageModal/ImageModal.jsx";
 
 export default function DetailsPage() {
   const camper = useSelector(selectCamperById);
-  console.log(camper);
   const dispatch = useDispatch();
   const { id } = useParams();
   const isLoading = useSelector(selectCamperByIdLoading);
-  // const [isModalOpen, setModalIsOpen] = useState(false);
-  // const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     dispatch(fetchById(id));
@@ -35,7 +31,6 @@ export default function DetailsPage() {
 
   const sizeWindow = useResizeWindow();
   const isMobile = sizeWindow < 768;
-  // const size = isMobile ? 16 : 32;
 
   return isLoading ? (
     <Loader />
