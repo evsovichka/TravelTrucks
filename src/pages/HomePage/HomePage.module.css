@@ -1,7 +1,5 @@
 /* -----------------MOBILE------------------- */
-.section {
-  overflow: hidden;
-}
+
 .background {
   background-image: url("../../assets/images/backgroundImage.jpg");
   width: 100%;
@@ -35,7 +33,7 @@
   line-height: 67%;
   color: var(--inputs);
   font-weight: 600;
-  font-size: 18px;
+  font-size: 24px;
   letter-spacing: 0.02em;
 }
 
