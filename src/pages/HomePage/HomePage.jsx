@@ -8,7 +8,7 @@ export default function HomePage() {
     navigate("/catalog");
   };
   return (
-    <section className={css.section}>
+    <>
       <div className={css.background}></div>
       <div className={css.wrapper}>
         <div className={css.textWrapper}>
@@ -21,6 +21,6 @@ export default function HomePage() {
           View Now
         </Button>
       </div>
-    </section>
+    </>
   );
 }
