@@ -3,7 +3,9 @@
   border: 1px solid var(--gray-light);
   border-radius: 10px;
   padding: 20px 20px 10px 20px;
-  width: 290px;
+  /* width: 290px; */
+  width: 100%;
+  max-width: 370px;
   gap: 8px;
   display: flex;
   flex-direction: column;
@@ -38,16 +40,25 @@
 }
 .inputContainer {
   position: relative;
-  width: 248px;
+  /* width: 248px; */
+  width: 100%;
+
+  max-width: 328px;
 }
 
 .formInput {
   padding: 10px;
-  width: 248px;
+  width: 100%;
+  /* width: 248px; */
+  max-width: 328px;
   border-radius: 12px;
   background: var(--inputs);
   border: none;
   transition: border 0.3s;
+}
+
+:global(.react-datepicker-wrapper) {
+  width: 100%;
 }
 
 .textarea {

@@ -92,9 +92,7 @@ const BookingForm = () => {
                 isClearable={true}
                 dateFormat="yyyy/MM/dd"
                 placeholderText="Booking date*"
-                className={`${css.formInput} ${
-                  errors.date ? css.errorInput : ""
-                }`}
+                className={css.formInput}
                 calendarClassName={css.customCalendar}
               />
               {/* {errors.date && (

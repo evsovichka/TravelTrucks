@@ -1,4 +1,7 @@
 /* -----------------MOBILE------------------- */
+.section {
+  overflow: hidden;
+}
 .background {
   background-image: url("../../assets/images/backgroundImage.jpg");
   width: 100%;

@@ -73,8 +73,10 @@
 
 .bottombox {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
   gap: 20px;
 }
 /* -----------------TABLET------------------- */
@@ -93,6 +95,7 @@
 
   .bottombox {
     gap: 15px;
+    flex-direction: row;
     flex-wrap: nowrap;
   }
 }
