@@ -44,7 +44,7 @@ export default function CardListItem({ data, size }) {
             </div>
           </div>
           <div className={css.ratingLocationWrapper}>
-            <Link to={`/catalog/${data.id}/reviews/#reviews`}>
+            <Link to={`/catalog/${data.id}/reviews`}>
               <div className={css.ratingLocationBox}>
                 <StarRating isRating={isRating} />
                 <p className={css.rating}>
