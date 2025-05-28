@@ -2,13 +2,20 @@ import { useSelector } from "react-redux";
 import Rating from "../Rating/Rating.jsx";
 import { selectCamperById } from "../../redux/selectors.js";
 import css from "./Reviews.module.css";
+import { useRef, useEffect } from "react";
 
 export default function Reviews() {
   const camper = useSelector(selectCamperById);
   const reviews = camper.reviews;
-  console.log(reviews.reviewer_rating);
+
+  const reviewRef = useRef(null);
+
+  useEffect(() => {
+    reviewRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   return (
-    <div className={css.wrap}>
+    <div ref={reviewRef} className={css.wrap}>
       <ul className={css.list}>
         {reviews.map((review, index) => {
           return (
